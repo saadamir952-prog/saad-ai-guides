@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<style>
+  @page { size: A4; margin: 14mm 16mm; }
+  body { font-family: 'DejaVu Sans', sans-serif; color: #1a1a22; font-size: 10.5pt; line-height: 1.45; }
+  h1 { font-size: 20pt; line-height: 1.2; margin: 0 0 4px 0; color: #14141a; }
+  h1 .accent { color: #b8860b; }
+  .sub { font-size: 11pt; color: #55555f; margin-bottom: 14px; }
+  .rule { height: 3px; background: linear-gradient(90deg, #0a0a0a, #ffd21f); border-radius: 2px; margin: 10px 0 16px 0; }
+  h2 { font-size: 13pt; color: #14141a; margin: 16px 0 4px 0; }
+  p { margin: 4px 0; }
+  .box { border: 1.5px solid #e8e9d8; border-left: 4px solid #e8b800; border-radius: 8px; padding: 10px 12px; margin: 10px 0; }
+  .offer { background: #0a0a0a; color: #fff; border-radius: 8px; padding: 12px 14px; margin: 14px 0; }
+  .offer h2 { color: #fff; margin-top: 0; }
+  .offer code { background: #2a2a35; color: #ffd21f; padding: 2px 8px; border-radius: 4px; font-size: 12pt; }
+  .steps ol { margin: 6px 0 0 0; padding-left: 18px; }
+  .steps li { margin: 6px 0; }
+  .tools ul { margin: 6px 0 0 0; padding-left: 18px; }
+  .tools li { margin: 4px 0; }
+  .foot { margin-top: 18px; padding-top: 10px; border-top: 1px solid #ddd; font-size: 10pt; color: #55555f; text-align: center; }
+  code { background: #f0f2e4; padding: 1px 5px; border-radius: 4px; font-size: 10pt; }
+  .link { color: #8a6d00; word-break: break-all; }
+  pre.prompt { background: #f4f5ea; border: 1px solid #d8dacc; border-radius: 8px; padding: 10px 12px; font-family: 'DejaVu Sans Mono', monospace; font-size: 8.5pt; line-height: 1.35; white-space: pre-wrap; word-wrap: break-word; margin: 8px 0; }
+  .note { font-size: 10pt; color: #55555f; font-style: italic; }
+  table.stack { border-collapse: collapse; width: 100%; margin: 8px 0; font-size: 10pt; page-break-inside: avoid; }
+  table.stack th { text-align: left; background: #14141a; color: #fff; padding: 6px 8px; }
+  table.stack td { border-bottom: 1px solid #e0e0d5; padding: 5px 8px; vertical-align: top; }
+  .free { color: #1a7a2e; font-weight: bold; }
+  .paid { color: #b3261e; font-weight: bold; }
+</style></head><body>
+
+<h1>3 Levels of AI Editing in Claude Code<br><span class="accent">From a Finished Video to the Beast Level.</span></h1>
+<p class="sub">You commented <b>EDIT</b> &mdash; here is the free guide. The 3 levels, the exact tool stack, the setup order, and the starter prompts. No paid course needed.</p>
+<div class="rule"></div>
+
+<div class="box">
+<h2>What it is</h2>
+<p>Claude can edit videos on <b>three levels</b> &mdash; and each level gives you more control. <b>Level 1:</b> Claude edits a finished video &mdash; cuts the silences, adds music. <b>Level 2:</b> Claude edits on your CapCut timeline inside VS Code, without opening CapCut. <b>Level 3 &mdash; the beast:</b> Claude builds the whole video from code: voice, background, motion, captions &mdash; no editor needed.</p>
+<p>This guide explains all three, with the exact tools and the honest prices. <b>Two pieces cost money: the Claude subscription and the ElevenLabs voice.</b> Everything else in the stack is free. Details at the end.</p>
+</div>
+
+<div class="box">
+<h2>Level 1 &mdash; The finished video</h2>
+<p>You give Claude a video that is already shot. Claude <b>cuts the silences</b> and <b>adds music</b> &mdash; using Whisper to hear every word with the second it was said, and FFmpeg to see every frame. You get back a finished, formatted video.</p>
+<p><b>The catch:</b> the video is finished. Change one thing &mdash; one word, one cut, one music track &mdash; and you start over. Good for quick clean-ups of a video that is already good. Not for anything you will want to revise.</p>
+</div>
+
+<div class="box">
+<h2>Level 2 &mdash; The timeline</h2>
+<p>Claude works inside <b>VS Code, on your CapCut timeline &mdash; without opening CapCut</b>. The timeline is a project file: Claude reads it and rewrites it. Swap any clip, move a segment, change a caption, adjust a zoom &mdash; every piece in place, and you can change anything without re-rendering the whole video.</p>
+<p>The tool that writes CapCut project files comes from GitHub &mdash; ask Claude Code to find and install it for you. <b>The catch:</b> you are still doing the assembly. Claude edits the timeline, but the footage, the structure and the decisions are yours. Good for creators who already edit and want the repetitive work done for them.</p>
+</div>
+
+<div class="box">
+<h2>Level 3 &mdash; The beast</h2>
+<p>The beast level is a full pipeline. Every piece has one job, and <b>Claude Code is the brain</b> that connects them:</p>
+<table class="stack">
+<tr><th>Job</th><th>Tool</th><th>Price</th></tr>
+<tr><td>The brain</td><td><b>Claude Code</b> &mdash; writes the Python tools and the motion code</td><td><span class="paid">PAID</span> &mdash; subscription</td></tr>
+<tr><td>The voice</td><td><b>ElevenLabs</b> &mdash; the voiceover</td><td><span class="paid">PAID</span></td></tr>
+<tr><td>The background</td><td><b>Cloudflare Workers AI</b> &mdash; generates the background</td><td><span class="free">FREE</span> &mdash; daily limit</td></tr>
+<tr><td>The motion</td><td><b>Remotion</b> &mdash; moves everything, frame by frame</td><td><span class="free">FREE</span> &mdash; open-source, GitHub</td></tr>
+<tr><td>The ears</td><td><b>Whisper</b> (OpenAI) &mdash; words + timestamps, so Claude cuts right</td><td><span class="free">FREE</span> &mdash; open-source, GitHub</td></tr>
+<tr><td>The eyes</td><td><b>FFmpeg</b> &mdash; reads the frames, so Claude can see the video</td><td><span class="free">FREE</span> &mdash; open-source</td></tr>
+<tr><td>The workspace</td><td><b>VS Code</b> &mdash; all the work happens here</td><td><span class="free">FREE</span></td></tr>
+<tr><td>The timeline</td><td><b>CapCut project writer</b> (GitHub) &mdash; writes the timeline file</td><td><span class="free">FREE</span> &mdash; open-source</td></tr>
+</table>
+<p><b>How it connects:</b> Whisper hears your words and writes each one with the second it was said. FFmpeg reads the frames. Remotion moves everything &mdash; frame by frame, it tells each element where it is. Cloudflare generates the background. ElevenLabs speaks the voiceover. Claude Code writes the Python tools and the Remotion code that tie it all together &mdash; all inside VS Code.</p>
+<p><b>You do not write the code yourself.</b> You tell Claude what you want, and Claude writes it into the project files. Claude Code is an agent, not a chatbot &mdash; you send text, it does the work.</p>
+<p><b>No big software needed:</b> you do not need CapCut, Premiere or After Effects to get a finished video &mdash; the video comes out as-is. The editor is only for more freedom and control afterwards. To change a part, tell Claude the exact second.</p>
+<p class="note">Heavy work needs a decent machine &mdash; on a weak laptop the rendering will be slow, and a stronger graphics card helps.</p>
+</div>
+
+<div class="box steps">
+<h2>Setup order &mdash; the checklist</h2>
+<p>Do it in this order. At every step, ask Claude Code inside VS Code to do the installing for you:</p>
+<ol>
+<li><b>VS Code</b> &mdash; free. Download and install it. This is the workspace where all the work happens.</li>
+<li><b>Claude Code extension</b> &mdash; install it inside VS Code from the Extensions panel, then sign in with your Claude account.</li>
+<li><b>Python + libraries</b> &mdash; ask Claude Code to install Python and the video libraries. Python has ready-made libraries for video work.</li>
+<li><b>Whisper + FFmpeg</b> &mdash; the ears and the eyes. Ask Claude Code to install Whisper from GitHub and FFmpeg, so Claude can hear and see your video.</li>
+<li><b>Remotion</b> &mdash; the motion. Claude Code installs the Remotion library for you.</li>
+<li><b>CapCut project tool</b> &mdash; the timeline. Ask Claude Code for the GitHub project that writes CapCut timelines, so the finished edit lands on a timeline you can open and adjust.</li>
+</ol>
+</div>
+
+<div class="box tools">
+<h2>The tools &mdash; with links</h2>
+<ul>
+<li><b>Whisper</b> (OpenAI, MIT) &mdash; <span class="link">github.com/openai/whisper</span> &mdash; free. Install: <code>pip install -U openai-whisper</code>. 99 languages, runs locally, offline.</li>
+<li><b>Remotion</b> &mdash; <span class="link">remotion.dev</span> (GitHub: <span class="link">github.com/remotion-dev/remotion</span>) &mdash; free, open-source. Code-based video: the edit is written as code, then rendered.</li>
+<li><b>Cloudflare Workers AI</b> &mdash; <span class="link">developers.cloudflare.com/workers-ai</span> &mdash; free with a daily limit. Generates the background image.</li>
+<li><b>ElevenLabs</b> &mdash; <span class="link">elevenlabs.io</span> &mdash; <b>paid</b>. The voiceover. (Our voice: Will, plain &mdash; no tags, no cloned voice.)</li>
+<li><b>VS Code</b> &mdash; <span class="link">code.visualstudio.com</span> &mdash; free. The workspace.</li>
+<li><b>FFmpeg</b> &mdash; <span class="link">ffmpeg.org</span> &mdash; free, open-source. Cutting, frames, loudness, muxing.</li>
+<li><b>Claude Code</b> &mdash; <span class="link">code.claude.com</span> &mdash; <b>paid subscription</b> (Pro $20/month). The brain.</li>
+<li><b>Python</b> &mdash; <span class="link">python.org</span> &mdash; free. The language the tools are written in.</li>
+</ul>
+</div>
+
+<div class="box">
+<h2>Starter Prompt 1 &mdash; Set up the stack</h2>
+<p class="note">Paste this into Claude Code in VS Code first. Adapted from our own setup prompt &mdash; replace <code>[your project folder]</code> with your folder.</p>
+<pre class="prompt">You are my video editing agent. Work in this folder:
+[your project folder].
+
+First, verify these tools exist and tell me which ones are
+missing — do not install anything yet: VS Code, Claude Code,
+Python, Whisper, FFmpeg, Remotion.
+
+If a tool is missing, give me the exact install step for it,
+one at a time. Never substitute a paid tool, and never spend
+anything without asking me.</pre>
+</div>
+
+<div class="box">
+<h2>Starter Prompt 2 &mdash; Level 1: cut silences, add music</h2>
+<pre class="prompt">Here is my video: [file].
+
+Use Whisper to transcribe it with word timestamps, then cut
+every silence longer than 0.4 seconds and add the music track
+[file] underneath at low volume, fading in and out.
+
+Export a finished vertical video, 1080×1920, 30 fps. Tell me
+how many pauses you cut and how many seconds you removed.</pre>
+</div>
+
+<div class="box">
+<h2>Starter Prompt 3 &mdash; Level 3: build the beast video</h2>
+<pre class="prompt">Build a 30-second vertical video (1080×1920) with Remotion
+from this script: [paste your script].
+
+Voiceover: generate it with ElevenLabs, plain and clear.
+Background: generate it with Cloudflare Workers AI.
+Motion: animate the text and visuals with Remotion — every
+text appearance moves, every transition has motion.
+Captions: key words only, white and yellow.
+
+Export the finished video. If any tool is missing, stop and
+tell me which one.</pre>
+<p class="note">One last thing: the idea matters more than the AI. The AI executes your ideas faster &mdash; but to be distinctive, you need a different idea.</p>
+</div>
+
+<div class="offer">
+<h2>The catch &mdash; stated, not hidden</h2>
+<p>Most of the stack is <b>free and open-source</b>: Whisper, Remotion, FFmpeg, VS Code, Python. Cloudflare Workers AI is free with a daily limit. But <b>two pieces cost money: the Claude subscription &mdash; Pro is $20/month &mdash; and the ElevenLabs voice.</b></p>
+<p>So the beast level is <b>NOT free</b>: the brain and the voice are paid. Levels 1 and 2 need Claude Code too, so the Claude subscription applies to all three levels. What is free: the setup, the prompts, this guide &mdash; and every open-source tool in the stack.</p>
+<p>Get the app here: <span style="color:#ffd21f">claude.com</span> &mdash; and the guide again any time at <span style="color:#ffd21f">saadamir952-prog.github.io/saad-ai-guides/edit/</span></p>
+</div>
+
+<p class="foot">Made by Saad AI &mdash; follow <b>@saad.aig</b> on Instagram &amp; TikTok.<br>One AI trend explained per video. Facts checked on the verified research &mdash; the 3 levels, the beast stack, and the setup order (Nov 2026).</p>
+</body></html>
