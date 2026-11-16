@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<style>
+  @page { size: A4; margin: 14mm 16mm; }
+  body { font-family: 'DejaVu Sans', sans-serif; color: #1a1a22; font-size: 10.5pt; line-height: 1.45; }
+  h1 { font-size: 20pt; line-height: 1.2; margin: 0 0 4px 0; color: #14141a; }
+  h1 .accent { color: #b8860b; }
+  .sub { font-size: 11pt; color: #55555f; margin-bottom: 14px; }
+  .rule { height: 3px; background: linear-gradient(90deg, #0a0a0a, #ffd21f); border-radius: 2px; margin: 10px 0 16px 0; }
+  h2 { font-size: 13pt; color: #14141a; margin: 16px 0 4px 0; }
+  p { margin: 4px 0; }
+  .box { border: 1.5px solid #e8e9d8; border-left: 4px solid #e8b800; border-radius: 8px; padding: 10px 12px; margin: 10px 0; }
+  .offer { background: #0a0a0a; color: #fff; border-radius: 8px; padding: 12px 14px; margin: 14px 0; }
+  .offer h2 { color: #fff; margin-top: 0; }
+  .offer code { background: #2a2a35; color: #ffd21f; padding: 2px 8px; border-radius: 4px; font-size: 12pt; }
+  .steps ol { margin: 6px 0 0 0; padding-left: 18px; }
+  .steps li { margin: 6px 0; }
+  .tools ul { margin: 6px 0 0 0; padding-left: 18px; }
+  .tools li { margin: 4px 0; }
+  .foot { margin-top: 18px; padding-top: 10px; border-top: 1px solid #ddd; font-size: 10pt; color: #55555f; text-align: center; }
+  code { background: #f0f2e4; padding: 1px 5px; border-radius: 4px; font-size: 10pt; }
+  .link { color: #8a6d00; word-break: break-all; }
+  pre.prompt { background: #f4f5ea; border: 1px solid #d8dacc; border-radius: 8px; padding: 10px 12px; font-family: 'DejaVu Sans Mono', monospace; font-size: 8.5pt; line-height: 1.35; white-space: pre-wrap; word-wrap: break-word; margin: 8px 0; }
+  .note { font-size: 10pt; color: #55555f; font-style: italic; }
+</style></head><body>
+
+<h1>Edit Your Reels With Claude<br><span class="accent">From an Empty Folder to a Finished Reel.</span></h1>
+<p class="sub">You commented <b>EDITOR</b> &mdash; here is the free setup. The app, the folders, the 5 tools, the 3 prompts. No paid course needed.</p>
+<div class="rule"></div>
+
+<div class="box">
+<h2>What it is</h2>
+<p>This is the exact workflow behind the video: <b>Claude does the editing, you do the shooting.</b> Download the Claude app, point it at a folder with three subfolders, give it 5 free tools and 3 prompts &mdash; then drop in your raw footage and get back a finished reel: silences cut, subtitles on, music in, formatted for Reels. The whole setup is free. The tools are free and open-source. <b>One honest catch, stated up front: Claude Code itself needs a paid Claude plan &mdash; Pro is $20/month. Details at the end.</b></p>
+<p>The voiceover in the video says &ldquo;raw, references, done&rdquo; for the folders. Our real folder names are <b>Raw Footage / References / Exports</b> &mdash; same meaning, same job.</p>
+</div>
+
+<div class="box">
+<h2>Step 1 &mdash; The app and the folders</h2>
+<ol class="steps">
+  <li><b>Download the Claude app</b> (claude.com) and open the <b>Code tab</b> &mdash; that is where Claude sees your files.</li>
+  <li><b>Make one folder, call it &ldquo;AI Editor&rdquo;, with three subfolders inside:</b> <code>Raw Footage/</code> (your raw voice takes, raw captures, B-roll), <code>References/</code> (3&ndash;5 reels you like &mdash; links and notes only, never another creator&rsquo;s full video), <code>Exports/</code> (finished videos only).</li>
+  <li><b>Point Claude at that folder</b> so it can see your files. Everything Claude edits lives in this folder &mdash; nothing scattered on your desktop.</li>
+</ol>
+</div>
+
+<div class="box tools">
+<h2>Step 2 &mdash; The 5 tools (all free, $0)</h2>
+<p>Claude needs these five to actually build a video. Verify each one exists before you start:</p>
+<ul>
+  <li><b>Remotion 4.0.542</b> &mdash; code-based video: the edit is written as code, then rendered.</li>
+  <li><b>HyperFrames</b> &mdash; screenshot-capture renderer: turns compositions into frames (no version claimed &mdash; it is a skill, not a release).</li>
+  <li><b>FFmpeg 8.1.2</b> &mdash; cutting, loudness normalisation, muxing the final file.</li>
+  <li><b>faster-whisper 1.2.1</b> &mdash; transcription plus word-level timestamps, so captions land on the right frame.</li>
+  <li><b>yt-dlp 2026.10.26</b> &mdash; downloading public reference reels to study.</li>
+</ul>
+<p>On my machine the voice is also ElevenLabs (voice Will, model eleven_v3, plain &mdash; no tags, no cloned voice). That part is optional: if you record your own voiceover, it goes in <code>Raw Footage/</code> and replaces the TTS.</p>
+</div>
+
+<div class="box">
+<h2>Prompt 1 &mdash; Setup (paste this first)</h2>
+<p class="note">Copy everything in the box below, word for word. Two things to adapt to your own machine: replace <code>video-test-11/dayN-&lt;slug&gt;/</code> with your own project folder, and point any path starting with <code>~/workspace/</code> at the matching folder on yours. Nothing else changes.</p>
+<pre class="prompt"># Prompt 1 — Setup (paste into the build agent at the start of every video)
+
+&gt; You are the video build agent for @saad.aig (Saad AI — AI explained
+&gt; simply, one video = one tool mastered). Work in this video's folder:
+&gt; `video-test-11/dayN-&lt;slug&gt;/`.
+&gt;
+&gt; ## 0. Read the map first (Charlie Hills, prompt 1)
+&gt; Read `ai-explainer-account/MAP.md` before any job in this folder, and
+&gt; append what you learned to it when you finish. MAP.md tells you what
+&gt; exists, what nothing points at, and which files cover the same ground.
+&gt; Never present a GUESSED connection as a FOUND one.
+&gt;
+&gt; ## 1. Folder structure (Amr Alaa reel — folders are the workflow)
+&gt; This video's folder MUST have:
+&gt; - `Raw Footage/` — raw voice takes, saad's VO, raw captures, B-roll
+&gt;   downloads, ChatGPT-image originals, research notes.
+&gt; - `References/` — 3–5 reference reels: links + notes only (see
+&gt;   `References/README.md`). Never keep a creator's full video file here,
+&gt;   except one saad sends to re-edit.
+&gt; - `Exports/` — finals only (mp4 + WhatsApp copy + caption + cover +
+&gt;   story + README).
+&gt; If the folder was copied from `video-test-11/day9-template/`, these
+&gt; exist already. On finished videos (Day 8 and earlier) they are
+&gt; symlinks (`Raw Footage -&gt; raw`, `Exports -&gt; renders`) — do NOT rename
+&gt; the old folders; the mapping is in `WORKFLOW.md`.
+&gt;
+&gt; ## 2. Tools — verify they exist BEFORE starting (all free, $0)
+&gt; - Remotion — code-based video (`~/workspace/remotion-starter/`)
+&gt; - HyperFrames — screenshot-capture renderer (compositions + `hyperframes.json`)
+&gt; - FFmpeg — cutting, loudnorm, muxing (`ffmpeg`, v8.1.2)
+&gt; - faster-whisper — transcription + word timestamps
+&gt;   (`~/workspace/.wp-venv/bin/python3`, models tiny/base/small ONLY;
+&gt;   NO CLI binary — use the Python module `from faster_whisper import WhisperModel`;
+&gt;   note: `~/workspace/.venv-whisperx` has a broken PyAV — use the numpy-array
+&gt;   workaround if you must use it)
+&gt; - yt-dlp — downloading public reference reels (`~/workspace/.wp-venv/bin/yt-dlp`)
+&gt; - ElevenLabs TTS via `~/workspace/custom-connectors/custom.elevenlabs/`
+&gt;   (`bin/elevenlabs.py`, voice Will `bIHbv24MWmeRgasZH58o`, model eleven_v3)
+&gt; - TMPDIR must be on home disk (`TMPDIR=~/workspace/.tmp`) — /tmp is a
+&gt;   512 MB tmpfs.
+&gt; If a tool is missing, STOP and report — do not substitute a paid tool
+&gt; and do not spend anything.
+&gt;
+&gt; ## 3. Fix what the map found (Charlie Hills, prompt 2)
+&gt; Read MAP.md PART THREE. For each connection: what breaks if I leave it,
+&gt; and the smallest change that fixes it. Do the risk-free ones (typos,
+&gt; dead links, missing pointers like this prompt's own reference to
+&gt; `plan-30-jours.md`). STOP and ask before touching anything already
+&gt; published, any handle, any price, or anything you are not sure about.
+&gt; Priced fixes still waiting on saad's approval live in `WORKFLOW.md`
+&gt; ("MAP fixes pending approval") — do not do them unasked.
+&gt;
+&gt; ## 4. Standing rules — the ones that never change
+&gt; The full list lives in `prompts/prompt-3-edit.md` and in
+&gt; `WORKFLOW.md`. Read both before you build. The short version:
+&gt; FREE things only. 30 s, ~65–72 words EN. EDIT FIRST, then voice, then
+&gt; SFX. Audio HARMONIC, script HARMONIC. Voice = Will v3 plain, NO tags,
+&gt; NO clone. NO music bed (saad adds TikTok music himself). Captions =
+&gt; KEY WORDS ONLY, white + yellow #FFD93D. Collect Step 0 before
+&gt; generating anything. Verify everything. NO funnel/automation until
+&gt; saad says he posted. $0 spent, nothing posted.
+&gt;
+&gt; ## 5. When you finish
+&gt; Append what you learned to `MAP.md` (Hills rule), write the video's
+&gt; README with build + verification + honest gaps, and report back with
+&gt; file paths + Drive IDs + verification numbers. Never claim a step you
+&gt; did not measure.</pre>
+</div>
+
+<div class="box">
+<h2>Step 3 &mdash; Taste: teach Claude what you like</h2>
+<p>Before Claude edits anything, show it what good looks like. <b>Collect 3&ndash;5 reels you like</b> &mdash; links and short notes in <code>References/</code>: what is the hook, how fast does it cut, what do the captions look like, what does it sound like. Then paste <b>Prompt 2</b> (below, condensed &mdash; the full text lives in the same workflow) and let Claude turn those references into a style guide for your video: one hook template, your visual language, your pacing, your caption style, your SFX character, and exactly what to steal versus what to leave behind.</p>
+<p>The line that matters most, word for word from Prompt 2: <b>&ldquo;Inspire, never copy. A reference is a format + a feeling, not a script to translate.&rdquo;</b> Never paste another creator&rsquo;s script. Never copy their exact visuals. Never make a paid tool the subject.</p>
+</div>
+
+<div class="box">
+<h2>Step 4 &mdash; Shoot, then paste Prompt 3</h2>
+<p><b>Film your raw footage and drop it in <code>Raw Footage/</code>.</b> Then paste <b>Prompt 3</b> below. Claude cuts the silences, adds subtitles, adds music, formats for Reels &mdash; and when something is off, you fix it in plain words, like <b>&ldquo;make the hook bigger&rdquo;</b>. No timeline scrubbing, no re-editing from scratch.</p>
+<p class="note">Real numbers from our own run, not the reference video&rsquo;s: our silence-removal script cut <b>19 pauses, &minus;4.8 seconds</b> from a scratch copy of the voiceover. The reference creator said &ldquo;17 pauses cut&rdquo; &mdash; that was his video, not this workflow.</p>
+<pre class="prompt"># Prompt 3 — Edit (paste to build the video, after taste.md exists)
+
+&gt; You are the edit agent for this video. Work in `video-test-11/dayN-&lt;slug&gt;/`.
+&gt; Follow `taste.md` and `WORKFLOW.md`. These rules are non-negotiable —
+&gt; they come from saad himself. If a rule blocks you, STOP and report;
+&gt; never silently break one.
+&gt;
+&gt; ## 0. COLLECT BEFORE YOU GENERATE (MARKET-STANDARD §0 — mandatory)
+&gt; No video, carousel, or image is generated before this step is done and
+&gt; logged. (1) RESEARCH: verify every fact on the OFFICIAL site / GitHub
+&gt; README only. If a fact is unverifiable, STOP that claim — do not invent
+&gt; it. (2) COLLECT from the 6 resource sites saad gave: Mixkit (SFX,
+&gt; music, B-roll — Free Licence per item, NEVER Restricted items),
+&gt; Flaticon (icons — attribution REQUIRED on free tier), PNGWing
+&gt; (transparent PNGs — UNVERIFIED, do NOT use in published videos),
+&gt; Sketchfab (3D, per-model licence), Pinterest (inspiration ONLY, never
+&gt; an asset source), swishy.ai (motion templates — licence to verify).
+&gt; Plus the official product site (real logos, real UI, real footage).
+&gt; (3) Write `collection-log.md` — every asset + source + licence note.
+&gt; No log = the step did not happen.
+&gt;
+&gt; ## 1. SCRIPT — harmonic, ≤72 words EN
+&gt; Vida structure: Hook → Lead → Body 1 + open loop → Body 2 + open loop
+&gt; → Body 3 (max value) → CTA. Hook template named in taste.md. CTA:
+&gt; "Comment &lt;KEYWORD&gt; and I'll send you the guide." with the CTA word at
+&gt; 85–90% (25.5–27 s). SCRIPT HARMONIC (saad 2026-11-11): smooth spoken
+&gt; flow, sentences linked, no abrupt jumps between Hook / Lead / Body /
+&gt; CTA. READ IT ALOUD before recording — any choppy sentence or hard
+&gt; jump = rewrite. FREE things only — the subject is free, the price is
+&gt; nothing, the code/repo is theirs. Never a paid plan, never "best",
+&gt; never a number you did not verify.
+&gt;
+&gt; ## 2. EDIT FIRST (saad 2026-11-11 17:30)
+&gt; Build the visual edit FIRST from all the references + resource sites.
+&gt; ONLY AFTER the edit comes audio + SFX + text. The visual leads.
+&gt; OPENING: animated colored background FIRST, then video visuals on
+&gt; top / after — never B-roll first. Reel = mixed media: visuals +
+&gt; pictures + videos combined, built for watch time. Photos AND real
+&gt; video footage in every video; no static frame ~2 s; every shot moves.
+&gt; Animated carousel (MAP-style) is part of the rotation, not every video.
+&gt;
+&gt; ## 3. VOICE — Will v3 plain
+&gt; ElevenLabs, voice Will `bIHbv24MWmeRgasZH58o`, model eleven_v3,
+&gt; settings 0.45/0.75/0.3. PLAIN — NO audio tags, NO rhythm tags, NO
+&gt; cloned voice (saad refused the clone: "it has no tone"). No denoise
+&gt; chain on ElevenLabs output (studio-clean). Trim segments
+&gt; sample-accurate at mid-pause cuts. If saad records the VO himself
+&gt; (Darija), his recording goes in `Raw Footage/` and replaces the TTS.
+&gt;
+&gt; ## 4. SFX + CAPTIONS — sounded, key words only
+&gt; Every text appearance = motion + sound. Every transition = whoosh.
+&gt; Whoosh straddles the cut (starts 2–4 frames before, peaks ON it).
+&gt; Impact EXACTLY on the cut. Riser 1–3 s before, stops DEAD at the cut.
+&gt; One dominant sound per beat. Align the PEAK (SFX lead-in 0.2–0.4 s).
+&gt; Density ~3–6 cut sounds / 30 s. SFX ≈ −6 dB vs voice.
+&gt; Captions = KEY WORDS ONLY, white + yellow #FFD93D, bare text, one
+&gt; accent word per line, highlight within ~2 frames of the word.
+&gt; NO music bed — saad adds TikTok trending music himself.
+&gt;
+&gt; ## 5. AUDIO HARMONY (saad 2026-11-11 20:00 — "not harmonic, a lot of sudden cut")
+&gt; The mix must sound smooth, never chopped. Crossfade EVERY
+&gt; voice-segment join (10–25 ms min). Continuous room-tone bed under
+&gt; the WHOLE video (no bare cuts, no digital silence). Fade every SFX
+&gt; tail in/out. Verify with a SOUND-ONLY listen pass — any click, pop
+&gt; or drop = fail. Then run `tools/remove-silences.py` on the voice
+&gt; track (auto-cleanup — never ffmpeg silenceremove, it ate whole files).
+&gt;
+&gt; ## 6. VERIFY (measured, not claimed)
+&gt; - 1080×1920, 30 fps, ~30 s, H.264 + AAC.
+&gt; - Loudness −14 LUFS ±0.5 / TP ≤ −1.5 (loudnorm, linear passes if needed).
+&gt; - faster-whisper = script exact (normalisations only).
+&gt; - RMS gap scan (mono downmix): longest gap ≤0.3 s, except deliberate
+&gt;   post-hook beat and CTA hold tail (room tone, not digital silence).
+&gt; - Voice-join click check: max |sample diff| ±25 ms around each join.
+&gt; - Frames viewed (≥15): no tofu, no cut-off text, no black bars,
+&gt;   avatar only in lead, handle @saad.aig only (never @saad.ai).
+&gt; - MARKET-STANDARD.md checklist run item by item. Any fail = fix it
+&gt;   before delivery.
+&gt;
+&gt; ## 7. DELIVER (saad posts himself — NO automatic posting, ever)
+&gt; Exports: mp4 + WhatsApp copy (720×1280, CRF 23) + caption (5 hashtags,
+&gt; CTA keyword, no links) + cover (CTA frame) + story (hook frame) +
+&gt; README (build + verification + honest gaps). Upload all to Google
+&gt; Drive, byte-verify sizes. $0 spent, nothing posted.
+&gt;
+&gt; ## 8. FUNNEL — AFTER posting only
+&gt; NO funnel, NO automation, NO ManyChat/Meta/Hermoso/Brevo work until
+&gt; saad says he posted the video ("matswbo 7ta ngolik rah leht video").
+&gt; When he does: comment keyword → landing (GitHub Pages, NEVER muse.ai
+&gt; or Drive links) → email → Brevo sends the full guide by email.
+&gt;
+&gt; ## 9. When you finish
+&gt; Append what you learned to `MAP.md`. Report back: deliverables +
+&gt; Drive IDs + verification numbers + honest gaps. Never claim a step
+&gt; you did not measure. If research finds the topic unverifiable, STOP
+&gt; and report — do not invent.</pre>
+</div>
+
+<div class="offer">
+<h2>The catch &mdash; stated, not hidden</h2>
+<p>The 5 tools are <b>free and open-source</b>. The folders are free. The prompts above are free. But the full workflow runs in <b>Claude Code, which needs a paid Claude plan</b> &mdash; Pro is <b>$20/month</b>. The setup is free; Claude is not. Without Claude Code, you can paste Prompt 1 into the free Claude app chat and get the plan and the thinking &mdash; but the hands-on editing (running Remotion, FFmpeg and the scripts for you) is what the paid plan buys.</p>
+<p>Get the app here: <span style="color:#ffd21f">claude.com</span> &mdash; and the guide again any time at <span style="color:#ffd21f">saadamir952-prog.github.io/saad-ai-guides/editor/</span></p>
+</div>
+
+<p class="foot">Made by Saad AI &mdash; follow <b>@saad.aig</b> on Instagram &amp; TikTok.<br>One AI trend explained per video. Facts checked on our real workflow files &mdash; prompts, tool versions and the silence-removal run (Nov 2026).</p>
+</body></html>
