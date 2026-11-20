@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fable Writes Code. The Code Becomes Video. — Free Guide | Saad AI</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0;}
+body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; background: #FAF6EF; color: #1A1A1A; line-height: 1.6; padding: 32px 20px 64px;}
+.wrap { max-width: 680px; margin: 0 auto;}
+.kicker { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: #C2571B; font-weight: 700; margin-bottom: 8px;}
+.banner { background: #1A1A1A; color: #F2EDE3; border-radius: 10px; padding: 12px 16px; font-size: 15px; font-weight: 700; margin-bottom: 20px;}
+h1 { font-size: 40px; line-height: 1.08; font-weight: 900; letter-spacing: -0.5px; margin-bottom: 12px;}
+h1 .accent { color: #C2571B;}
+.sub { font-size: 18px; color: #555; margin-bottom: 28px;}
+h2 { font-size: 22px; margin: 32px 0 12px; padding-top: 20px; border-top: 2px solid #E8DFD2;}
+h3 { font-size: 17px; margin: 20px 0 6px;}
+p, li { font-size: 16px; color: #333;}
+p { margin-bottom: 12px;}
+ul, ol { margin: 0 0 12px 22px;}
+li { margin-bottom: 6px;}
+code { background: #EFE7D8; padding: 2px 6px; border-radius: 4px; font-size: 14px;}
+pre { background: #1A1A1A; color: #F2EDE3; padding: 16px; border-radius: 10px; overflow-x: auto; font-size: 12px; line-height: 1.45; margin: 10px 0 16px; white-space: pre-wrap; word-break: break-all;}
+.card { background: #fff; border: 1px solid #E8DFD2; border-radius: 12px; padding: 20px; margin: 16px 0;}
+.card b { color: #C2571B;}
+.step { display: flex; gap: 14px; margin-bottom: 14px;}
+.step .n { flex: 0 0 30px; height: 30px; border-radius: 50%; background: #C2571B; color: #fff; font-weight: 800; text-align: center; line-height: 30px;}
+.warn { background: #FFF4E5; border-left: 4px solid #E8A33D; padding: 14px 16px; border-radius: 0 8px 8px 0; margin: 16px 0;}
+.pitch { background: #1A1A1A; color: #F2EDE3; border-radius: 12px; padding: 22px; margin: 28px 0;}
+.pitch h2 { border: none; padding: 0; margin: 0 0 10px; color: #fff;}
+.pitch p { color: #D8D2C4;}
+.pitch a { color: #F0A35E; font-weight: 700;}
+a { color: #C2571B;}
+.foot { font-size: 13px; color: #999; margin-top: 32px;}
+@media print {
+body { background: #fff; padding: 0;}
+.pitch { break-inside: avoid;}
+h2 { break-after: avoid;}
+pre { font-size: 10px;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="kicker">Saad AI &middot; Free guide</div>
+<div class="banner">You commented FABLE &mdash; here&rsquo;s your free guide &#128071;</div>
+<h1>Fable writes code. <span class="accent">The code becomes video.</span></h1>
+<p class="sub">Claude Fable 5.2 &mdash; Anthropic&rsquo;s animation model, launched 9 November 2026 &mdash; does <b>not</b> generate video. It writes the code that renders to video: a Three.js scene, a Remotion project, a Blender script. You describe the video. It writes the program. Your browser renders the MP4. This guide has the cost, the proof, and the exact steps to try it.</p>
+
+<div class="warn">
+<b>The cost, first &mdash; because it is not free.</b> Fable 5.2 is <b>not on the Free plan</b>. On the API it costs <b>$8 per million input tokens and $40 per million output tokens</b> (model id <code>claude-fable-5-2</code>). In the Claude apps, Fable on a <b>Pro plan runs on pay-as-you-go usage credits</b>; on Max ($100/month) and Ultra ($200/month), Fable can use up to 50% of weekly limits. The launch-week offer &mdash; Fable inside weekly limits at no extra cost &mdash; <b>ended 16 November 2026</b>. A short film in independent tests cost <b>$1.40&ndash;$4.25</b> in API tokens; a full game built in one run cost <b>about $550</b>. Code-made films burn a lot of output tokens, and a long render-and-review loop adds up fast.
+</div>
+
+<h2>What Fable actually does</h2>
+<p>Anthropic&rsquo;s own wording: Fable 5.2 <b>&ldquo;creates simulations, animations, and educational videos with sound in code.&rdquo;</b> The model only outputs text &mdash; so the animation is an <b>HTML page</b>, a <b>Three.js scene</b>, a <b>Remotion or HyperFrames project</b>, or a <b>Blender Python script</b> that plays in a browser and renders to MP4. It does not draw frames the way a video model does.</p>
+<p>That is the whole trick, and it is why the results look different from AI video:</p>
+<ul>
+<li><b>Everything is editable.</b> The type, the colours, the timing, the camera &mdash; all of it is code you can open, change and re-render.</li>
+<li><b>Nothing is hallucinated twice.</b> A video model redraws every frame; Fable&rsquo;s code renders the same scene deterministically.</li>
+<li><b>It can look at its own work.</b> Fable reads charts and figures far better than earlier models (73.4% on Anthropic&rsquo;s Chartography test, vs 64.4% for Opus 5.5), so the render-review-fix loop actually works: render the frames, look at them, fix the code.</li>
+</ul>
+<p>Anthropic still recommends <b>Opus 5.5 as the daily driver</b> and Fable for the most ambitious, open-ended work &mdash; or as an advisor over smaller models. Fable costs twice Opus per token ($8/$40 vs $4/$20), so use it where the creative choices matter, not for routine edits.</p>
+
+<h2>The proof (why this blew up)</h2>
+<div class="card">
+<b>944K views</b> &mdash; a 3D animal cell, built organelle by organelle from code. One prompt, one scene, no video model involved.
+</div>
+<div class="card">
+<b>903K views</b> &mdash; an open-world Manhattan game, written as code and played in the browser.
+</div>
+<div class="card">
+<b>595K views</b> &mdash; a one-prompt Blender film, scripted end to end by Fable.
+</div>
+<div class="card">
+<b>~$550, 8 hours</b> &mdash; <i>Saltline</i>, a first-person shooter set in a rain-soaked port, built from scratch in a single run with no human feedback during the run. That is the extreme end of the cost scale &mdash; a whole game, not a 30-second clip.
+</div>
+<p>View counts are from public posts in November 2026 and keep moving. The point is not the numbers &mdash; it is that every one of these is <b>code you can open</b>, not frames you can only watch.</p>
+
+<h2>Try it (4 steps)</h2>
+<div class="step"><div class="n">1</div><div><b>Update Claude Code</b> to version 2.1.321 or newer. Fable needs a <b>paid Claude plan</b> (Pro, Max, Ultra, Team or Enterprise) &mdash; see the cost box at the top.</div></div>
+<div class="step"><div class="n">2</div><div><b>Switch models</b> inside Claude Code:</div></div>
+<pre>/model fable</pre>
+<div class="step"><div class="n">3</div><div><b>Describe the video you want</b> &mdash; the subject, the style, the length, the camera. Try one of the starter prompts below.</div></div>
+<div class="step"><div class="n">4</div><div><b>Render what it writes.</b> Fable hands you code: open the HTML file in a browser, run the Remotion project, or run the Blender script. The MP4 comes out of <i>your</i> render, not out of the model. Watch it, tell Fable what to fix, re-render.</div></div>
+
+<h2>3 starter prompts</h2>
+<p><b>1. Kinetic typography explainer</b> (the format that won Fable&rsquo;s test films):</p>
+<p><i>&ldquo;Make a 30-second kinetic-typography explainer as a single HTML file. Topic: [your topic]. Big bold type, one idea per shot, words landing on the beat, dark background, one accent colour. Render it to MP4.&rdquo;</i></p>
+<p><b>2. Data chart, animated:</b></p>
+<p><i>&ldquo;Animate this data as a 20-second chart video in Three.js: [paste 4&ndash;6 numbers]. Bars grow in one by one, the biggest number lands last with a count-up, clean light background, labels always readable.&rdquo;</i></p>
+<p><b>3. A 3D scene from one sentence:</b></p>
+<p><i>&ldquo;Build a 15-second 3D scene in Three.js: a [subject] rotating slowly, orbit rings around it, warm light, cream background. Camera pushes in slowly the whole time. Export the render as MP4.&rdquo;</i></p>
+
+<h2>Honest limits</h2>
+<ul>
+<li><b>It costs real money per film.</b> Short films ran $1.40&ndash;$4.25 in tests; a long review loop costs more. Set a budget before you start iterating.</li>
+<li><b>The reel&rsquo;s demos are ours, not Fable&rsquo;s.</b> The rotating cell and the iso city in the video are Three.js scenes <b>we built</b> to show what &ldquo;code becomes video&rdquo; means &mdash; the footage is real code rendering live in a browser, but Fable did not write those scenes. The proof numbers above are Fable&rsquo;s real public results.</li>
+<li><b>You still have to render.</b> Fable writes code; the MP4 comes from your browser, Remotion or Blender. If the code has a bug, you see a broken frame &mdash; paste the error back and it fixes it.</li>
+<li><b>Quality varies by prompt.</b> In the 7-film independent test, Fable won 4 outright (kinetic typography, model launch, product launch, open brief) and lost pixel-art to Opus. Vague briefs get vague films &mdash; name the style, the length and the camera.</li>
+<li><b>Not for photoreal people.</b> Fable&rsquo;s strength is motion graphics, explainers, data, 3D scenes and games. For photoreal humans and lifestyle footage, a video model is still the right tool.</li>
+</ul>
+
+<h2>Links</h2>
+<ul>
+<li>Fable 5.2, what it makes and what it costs (independent guide, updated 16 Nov 2026): <a href="https://createmotion.io/guides/claude-fable-5-2-animation/">createmotion.io/guides/claude-fable-5-2-animation</a></li>
+<li>Claude Code (paid plan required): <a href="https://claude.com/product/claude-code">claude.com/product/claude-code</a></li>
+</ul>
+
+<div class="pitch">
+<h2>Want the full skill?</h2>
+<p>This guide is the free DIY version &mdash; you set up the tools and run the workflow yourself. If you want the whole pipeline packaged &mdash; transcribe, cut the silences, pick the best takes, animated captions, SFX, and a mastered export &mdash; the Claude Video Editor skill does it in one command. $20, one-time payment: <a href="https://saadai.gumroad.com/l/claude-video-editor">saadai.gumroad.com/l/claude-video-editor</a></p>
+</div>
+
+<p class="foot">Made by Saad AI &mdash; follow @saad.aig on Instagram &amp; TikTok. One AI trend explained per video. Guide again at saadamir952-prog.github.io/saad-ai-guides/fable/</p>
+</div>
+</body>
+</html>
