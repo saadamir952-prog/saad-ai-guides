@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Four Free Claude Video Skills: Turn Claude Into Your Editing Team — Free Guide | Saad AI</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #F5EFE4;
+    background-image:
+      linear-gradient(rgba(26,26,26,0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(26,26,26,0.045) 1px, transparent 1px);
+    background-size: 28px 28px;
+    color: #1A1A1A;
+    line-height: 1.5;
+    padding: 24px 16px 48px;
+  }
+  .wrap { max-width: 620px; margin: 0 auto; }
+  .kicker {
+    font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
+    color: #E85D3D; font-weight: 700; margin-bottom: 10px;
+  }
+  h1 {
+    font-family: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif;
+    font-size: 44px; line-height: 1.02; font-weight: 900;
+    text-transform: uppercase; letter-spacing: -0.5px; margin-bottom: 12px;
+  }
+  h1 .accent { color: #E85D3D; }
+  .sub { font-size: 18px; color: #33333a; margin-bottom: 24px; }
+  .card {
+    background: #fff; border: 1.5px solid #1A1A1A; border-radius: 12px;
+    padding: 18px 20px; margin-bottom: 14px;
+  }
+  .card h2 { font-size: 15px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
+  .card h3 { font-size: 17px; margin: 14px 0 4px; }
+  .card p { font-size: 16px; color: #33333a; margin-bottom: 10px; }
+  .card p b { color: #1A1A1A; }
+  .card ol { padding-left: 20px; font-size: 16px; color: #33333a; }
+  .card ol li { margin: 6px 0; }
+  .card ul { padding-left: 20px; font-size: 16px; color: #33333a; }
+  .card ul li { margin: 4px 0; }
+  .free {
+    background: #1A1A1A; color: #fff; border-radius: 12px;
+    padding: 18px 20px; margin-bottom: 22px;
+  }
+  .free h2 { font-size: 15px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
+  .free p { font-size: 16px; color: #eee; }
+  .free a { color: #ffb199; }
+  code { background: #EFE7D8; padding: 2px 6px; border-radius: 4px; font-size: 14px; }
+  pre {
+    background: #1A1A1A; color: #F2EDE3; padding: 14px; border-radius: 10px;
+    overflow-x: auto; font-size: 12px; line-height: 1.45; margin: 10px 0 12px;
+    white-space: pre-wrap; word-break: break-all;
+  }
+  pre code { background: none; padding: 0; color: #F2EDE3; }
+  a { color: #C2571B; }
+  .pitch {
+    background: #1A1A1A; color: #F2EDE3; border-radius: 12px;
+    padding: 20px; margin: 22px 0;
+  }
+  .pitch h2 { font-size: 15px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; color: #fff; }
+  .pitch p { font-size: 16px; color: #D8D2C4; }
+  .pitch a { color: #F0A35E; font-weight: 700; }
+  .done {
+    text-align: center; font-size: 16px; color: #33333a;
+    margin: 18px 0 6px;
+  }
+  .foot {
+    margin-top: 28px; padding-top: 14px; border-top: 1px solid #ccc;
+    font-size: 13px; color: #66666e; text-align: center;
+  }
+  @media (max-width: 480px) { h1 { font-size: 36px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="kicker">Saad AI &mdash; Free Guide</p>
+  <h1>Four free skills. <span class="accent">One editing team.</span></h1>
+  <p class="sub">You commented <b>FOUR</b> &mdash; this is the free guide, right here on this page, no email needed: four free, open-source Claude Code skills that turn Claude into a full video-editing team. Each one does a different editing job from a plain-English prompt. All four links, install commands and starter prompts are below.</p>
+
+  <div class="free">
+    <h2>Stated honestly</h2>
+    <p>The four skills are <b>free and open-source</b> &mdash; but the thing that runs them is <b>not</b>: Claude Code needs a <b>paid Claude plan</b> (Pro $20/month, or $17/month billed annually; the Free plan does <b>not</b> include Claude Code). So the skills cost $0, the seat costs $20/month. And one more honest note: the viral list this video is based on had a <b>fifth</b> skill (Higgsfield motion graphics) &mdash; we <b>dropped it</b> because its free plan gives <b>0 credits and no video generation</b> (paid from $19/month). We would rather ship four that are actually free than five with one that is not.</p>
+  </div>
+
+  <div class="card">
+    <h2>Before you install anything</h2>
+    <p>You need <b>Claude Code</b> first: a paid Claude plan, then install Claude Code from <a href="https://claude.com/product/claude-code">claude.com/product/claude-code</a>. A Claude Code <b>skill</b> is just a folder of instructions (a <code>SKILL.md</code> file) that teaches Claude how to do one job. Installing a skill = putting that folder where Claude Code can find it, usually <code>~/.claude/skills/</code>. After that, you just talk to Claude in plain English and it does the job.</p>
+  </div>
+
+  <div class="card">
+    <h2>1. Ghost Editor &mdash; it cuts your mistakes</h2>
+    <p>Raw talking-head in, best takes kept, mistakes cut, captions that never cover your face. A skill that edits talking-head reels in <b>19 styles</b> and renders on your Mac.</p>
+    <ul>
+      <li><b>Repo:</b> <a href="https://github.com/kurbaitaev/ghost-editor">github.com/kurbaitaev/ghost-editor</a> &mdash; MIT, 622 stars (19 Nov 2026)</li>
+      <li><b>Best for:</b> talking-head reels, podcasts, any video where you talk to camera and want the ums, pauses and bad takes gone.</li>
+    </ul>
+    <pre><code>git clone https://github.com/kurbaitaev/ghost-editor ~/.claude/skills/ghost-editor
+# then follow its docs/INSTALL.md inside Claude Code</code></pre>
+    <p><b>What to say to Claude:</b> <i>&ldquo;Edit this talking-head clip: cut the silences and mistakes, keep the best takes, add captions that never cover my face.&rdquo;</i></p>
+    <p><b>Know before you install:</b> about <b>4 GB of disk</b> &mdash; the install sets up ffmpeg, Node, Python, Whisper and OpenCV. A free <b>Gemini API key is optional</b> for its B-roll check (the frames it checks go to Google; without the key, that check is simply skipped). An ElevenLabs key is only needed if you want its explainer narrator voice.</p>
+  </div>
+
+  <div class="card">
+    <h2>2. FFmpeg Skill &mdash; the technical jobs, on your computer</h2>
+    <p><b>42 editing tools</b> inside Claude: cut silences, add subtitles, crop vertical, fix audio, convert formats. Runs <b>entirely on your own computer</b> &mdash; no cloud, no upload, no API keys.</p>
+    <ul>
+      <li><b>Repo:</b> <a href="https://github.com/kajisho5/ffmpeg-skill">github.com/kajisho5/ffmpeg-skill</a> &mdash; MIT, 8,086 stars (19 Nov 2026)</li>
+      <li><b>Best for:</b> the boring-but-necessary jobs &mdash; silence cuts, vertical crops, subtitles, audio cleanup &mdash; done locally and verified after every step.</li>
+    </ul>
+    <pre><code># FFmpeg itself, once (Ubuntu/Debian shown; macOS and Windows in the repo's install table)
+sudo apt install ffmpeg
+
+# Install the skill for Claude Code (Cursor: --cursor, Codex: --codex, all three: --all)
+npx ffmpeg-skill</code></pre>
+    <p><b>What to say to Claude:</b> <i>&ldquo;Cut the silences, crop this to vertical 9:16, and add subtitles.&rdquo;</i></p>
+  </div>
+
+  <div class="card">
+    <h2>3. Claude Shorts &mdash; one long video, many captioned clips</h2>
+    <p>Give it a long video; it finds the best moments and cuts <b>captioned vertical clips</b> out of it. The repurposing machine: one podcast or stream becomes a week of shorts.</p>
+    <ul>
+      <li><b>Repo:</b> <a href="https://github.com/AgriciDaniel/claude-shorts">github.com/AgriciDaniel/claude-shorts</a> &mdash; MIT, 435 stars (19 Nov 2026)</li>
+      <li><b>Best for:</b> turning long videos (podcasts, streams, talks) into short vertical clips with captions.</li>
+    </ul>
+    <pre><code>git clone https://github.com/AgriciDaniel/claude-shorts.git
+cd claude-shorts
+bash setup.sh
+bash install.sh</code></pre>
+    <p><b>What to say to Claude:</b> <i>&ldquo;Cut the 5 best moments from this long video into captioned vertical shorts.&rdquo;</i></p>
+  </div>
+
+  <div class="card">
+    <h2>4. OpenMontage &mdash; it copies any edit you love</h2>
+    <p>Show it a reel you love; it studies the <b>hook, pacing and edits</b>, then makes yours the same way. The most powerful of the four &mdash; and the one with the biggest honest asterisk.</p>
+    <ul>
+      <li><b>Repo:</b> <a href="https://github.com/OpenMontageInc/OpenMontage">github.com/OpenMontageInc/OpenMontage</a> &mdash; AGPL-3.0, 81,616 stars (19 Nov 2026)</li>
+      <li><b>Best for:</b> rebuilding a reel in a style you admire &mdash; same hook structure, same pacing, your footage.</li>
+    </ul>
+    <pre><code>git clone https://github.com/OpenMontageInc/OpenMontage.git
+cd OpenMontage
+make install</code></pre>
+    <p><b>Needs:</b> Python 3.10+, FFmpeg, Node.js 22/24/26, and an AI coding assistant (Claude Code, Cursor, Copilot, Windsurf or Codex). Full requirements are in the repo README.</p>
+    <p><b>What to say to Claude:</b> <i>&ldquo;Study this reel&rsquo;s hook and pacing, then rebuild my clip the same way.&rdquo;</i></p>
+    <p><b>The honest asterisk:</b> the <b>free path uses stock footage</b> &mdash; the agent builds a corpus from free stock footage and open archives and edits real motion clips into a timeline. Paid AI-clip paths via fal.ai exist (their demo short cost $1.33). Use the free stock path unless you deliberately choose to pay.</p>
+  </div>
+
+  <div class="card">
+    <h2>The workflow, start to finish</h2>
+    <ol>
+      <li><b>Get Claude Code</b> &mdash; paid plan ($20/month, or $17/month billed annually). The skills are free; the seat is not.</li>
+      <li><b>Install the skill you need</b> with the commands above &mdash; start with one, not all four.</li>
+      <li><b>Drop in your clip</b> and describe the edit in plain English, like the examples above.</li>
+      <li><b>Watch the result before you post.</b> If a cut feels wrong, tell Claude what you see and it fixes it. It drafts, you approve.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>Honest limits</h2>
+    <ul>
+      <li><b>Claude Code is paid</b> ($20/month, or $17/month billed annually) &mdash; the skills are free, the seat is not.</li>
+      <li><b>Higgsfield was dropped</b> from the original five: its free plan gives 0 credits and no video generation. Paid from $19/month.</li>
+      <li><b>Ghost Editor&rsquo;s B-roll check sends frames to Google</b> (needs a free Gemini key) &mdash; skip it if that bothers you; the edit still works.</li>
+      <li><b>OpenMontage&rsquo;s free path is stock footage.</b> AI-generated clips via fal.ai cost money (their demo: $1.33 for one short).</li>
+      <li><b>Star counts move.</b> The numbers above are from 19 Nov 2026 &mdash; check the repo pages for today&rsquo;s counts.</li>
+      <li>It drafts, you approve. <b>Watch every export before you post.</b></li>
+    </ul>
+  </div>
+
+  <div class="pitch">
+    <h2>Want the full skill?</h2>
+    <p>This guide is the free DIY version &mdash; you set up the tools and run the workflow yourself. If you want the whole pipeline packaged &mdash; transcribe, cut the silences, pick the best takes, animated captions, SFX, and a mastered export &mdash; the Claude Video Editor skill does it in one command. $20, one-time payment: <a href="https://saadai.gumroad.com/l/claude-video-editor">saadai.gumroad.com/l/claude-video-editor</a></p>
+  </div>
+
+  <p class="done"><b>That&rsquo;s the whole guide &mdash; no email needed.</b> Start with one skill, not all four.</p>
+
+  <p class="foot">Made by Saad AI &mdash; follow <b>@saad.aig</b> on Instagram &amp; TikTok.<br>One AI trend explained per video. List popularised by @david_knowsai &mdash; re-verified and rebuilt by @saad.aig (Nov 2026). Guide verified 19 Nov 2026.</p>
+</div>
+</body>
+</html>
