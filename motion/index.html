@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MOTION: How Claude Makes Motion Videos — Free Guide | Saad AI</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0;}
+body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; background: #FAF6EF; color: #1A1A1A; line-height: 1.6; padding: 32px 20px 64px;}
+.wrap { max-width: 680px; margin: 0 auto;}
+.kicker { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: #C2571B; font-weight: 700; margin-bottom: 8px;}
+.banner { background: #1A1A1A; color: #F2EDE3; border-radius: 10px; padding: 12px 16px; font-size: 15px; font-weight: 700; margin-bottom: 20px;}
+h1 { font-size: 40px; line-height: 1.08; font-weight: 900; letter-spacing: -0.5px; margin-bottom: 12px;}
+h1 .accent { color: #C2571B;}
+.sub { font-size: 18px; color: #555; margin-bottom: 28px;}
+h2 { font-size: 22px; margin: 32px 0 12px; padding-top: 20px; border-top: 2px solid #E8DFD2;}
+h3 { font-size: 17px; margin: 20px 0 6px;}
+p, li { font-size: 16px; color: #333;}
+p { margin-bottom: 12px;}
+ul, ol { margin: 0 0 12px 22px;}
+li { margin-bottom: 6px;}
+code { background: #EFE7D8; padding: 2px 6px; border-radius: 4px; font-size: 14px;}
+pre { background: #1A1A1A; color: #F2EDE3; padding: 16px; border-radius: 10px; overflow-x: auto; font-size: 12px; line-height: 1.45; margin: 10px 0 16px; white-space: pre-wrap; word-break: break-all;}
+.card { background: #fff; border: 1px solid #E8DFD2; border-radius: 12px; padding: 20px; margin: 16px 0;}
+.card b { color: #C2571B;}
+.step { display: flex; gap: 14px; margin-bottom: 14px;}
+.step .n { flex: 0 0 30px; height: 30px; border-radius: 50%; background: #C2571B; color: #fff; font-weight: 800; text-align: center; line-height: 30px;}
+.warn { background: #FFF4E5; border-left: 4px solid #E8A33D; padding: 14px 16px; border-radius: 0 8px 8px 0; margin: 16px 0;}
+.guide { background: #fff; border: 1px solid #E8DFD2; border-radius: 12px; padding: 20px; margin: 16px 0;}
+.folder { background: #1A1A1A; color: #F2EDE3; border-radius: 12px; padding: 22px; margin: 28px 0;}
+.folder h2 { border: none; padding: 0; margin: 0 0 10px; color: #fff;}
+.folder p, .folder li { color: #D8D2C4;}
+.folder a { color: #F0A35E; font-weight: 700;}
+.folder code { background: #333; color: #F2EDE3;}
+.pitch { background: #1A1A1A; color: #F2EDE3; border-radius: 12px; padding: 22px; margin: 28px 0;}
+.pitch h2 { border: none; padding: 0; margin: 0 0 10px; color: #fff;}
+.pitch p { color: #D8D2C4;}
+.pitch a { color: #F0A35E; font-weight: 700;}
+a { color: #C2571B;}
+.foot { font-size: 13px; color: #999; margin-top: 32px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="kicker">Saad AI &middot; Free guide &middot; Keyword: MOTION</div>
+<div class="banner">You commented MOTION &mdash; here&rsquo;s your free guide &#128071;</div>
+<h1>Claude doesn&rsquo;t film. <span class="accent">It writes the code that becomes video.</span></h1>
+<p class="sub">Claude never generates a video frame. It writes a program &mdash; a Three.js scene, a Remotion composition, a Blender script &mdash; and your machine renders the MP4. This page has the full guide, free, plus your folder: the 3 starter prompts as a file you can keep, and the actual Three.js scene code from the video.</p>
+<h2>What this guide covers</h2>
+<ul>
+<li><b>The method</b> &mdash; prompt &rarr; code &rarr; render, in 4 steps, and why code beats frames (editable, deterministic, fixable).</li>
+<li><b>The two code routes</b> &mdash; Three.js (one HTML file, best for 3D scenes) and Remotion (React video, best for kinetic type).</li>
+<li><b>What the code looks like</b> &mdash; a minimal Three.js scene, line by line, so you see exactly what Claude writes.</li>
+<li><b>3 starter prompts</b> &mdash; a 3D orbit scene, an animated chart, a kinetic-typography explainer &mdash; also as a file in your folder below.</li>
+<li><b>How to render to MP4</b> &mdash; screen-record the browser, or encode frames with ffmpeg, or render with the Remotion CLI.</li>
+<li><b>The honest limits</b> &mdash; no filming, no real footage, Claude Code required, iteration is the work.</li>
+</ul>
+<div class="guide">
+<h2>Get the free guide</h2>
+<p>The full guide is on this page &mdash; no email needed, no sign-up, no download. Scroll down and read it here.</p>
+<p><a href="#guide">Read the full guide ↓</a></p>
+</div>
+<div class="folder">
+<h2>Your free folder</h2>
+<p>These files are yours to keep &mdash; no email needed:</p>
+<ul>
+<li><code>prompts.md</code> &mdash; the 3 starter prompts (3D orbit scene, animated chart, kinetic typography) as a plain-text file. <a href="prompts.md">Download prompts.md</a></li>
+<li><code>morph-scene.html</code> &mdash; the actual Three.js scene from the video (code fragments assemble a cube, the cube morphs into a sphere). Open it in a browser and it plays &mdash; the code is inside, change a word and the scene changes. <a href="morph-scene.html">Download morph-scene.html</a></li>
+</ul>
+</div>
+<div class="warn">
+<b>The honest limit.</b> Claude writes <b>code</b>, it doesn&rsquo;t film. There is no camera, no real footage, no photoreal people. What you get is motion graphics, 3D scenes, animated charts and kinetic type &mdash; rendered from code you can open and change. If a shot needs a photo or a screen recording, you supply it yourself.
+</div>
+<h2 id="guide">The full guide</h2>
+<h3>The method in 30 seconds</h3>
+<div class="step"><div class="n">1</div><div><b>Describe the video.</b> Subject, style, length, camera, what happens when. The prompt is the brief &mdash; the more specific it is, the better the code.</div></div>
+<div class="step"><div class="n">2</div><div><b>Claude writes the code.</b> A Three.js scene, a Remotion project, or a Blender Python script. Text in, program out. No frames are generated.</div></div>
+<div class="step"><div class="n">3</div><div><b>You render it.</b> Open the HTML file in a browser, run the Remotion project, or run the Blender script. The MP4 comes out of <i>your</i> render, not out of the model.</div></div>
+<div class="step"><div class="n">4</div><div><b>Watch it, fix it, re-render.</b> Tell Claude what looks wrong, it patches the code, you render again. That loop <i>is</i> the workflow &mdash; budget for several rounds.</div></div>
+<h3>Why code, not frames?</h3>
+<ul>
+<li><b>Everything is editable.</b> The type, the colours, the timing, the camera &mdash; all of it is code you can open, change and re-render. A video model gives you pixels you can only watch.</li>
+<li><b>Nothing is hallucinated twice.</b> A video model redraws every frame; code renders the same scene deterministically, every time.</li>
+<li><b>It can look at its own work.</b> Render the frames, show them back to Claude, and it fixes the code. The render&ndash;review&ndash;fix loop actually works because the model can see what it made.</li>
+</ul>
+<h3>The two code routes</h3>
+<p><b>Three.js &mdash; one HTML file.</b> Best for 3D scenes, product spins, animated diagrams and data visualisation. The whole video is a single HTML file: open it in any browser and it plays. Record the browser window, or export the frames and encode them to MP4.</p>
+<p><b>Remotion &mdash; video in React.</b> Best for kinetic typography, captions, templates and programmatic edits. You describe compositions in React code, and Remotion renders them to MP4 from the command line. If your video is mostly type and layout, this is the faster route.</p>
+<p>A third route exists &mdash; <b>Blender Python scripts</b> for full 3D films &mdash; but start with Three.js or Remotion. They render in minutes, not hours.</p>
+<h3>What the code looks like</h3>
+<p>A minimal Three.js scene &mdash; the kind of code Claude writes for a 3D shot. This is an illustration of the shape of the code, not the scene from the video:</p>
+<pre>// A minimal Three.js scene: one object, one light, one camera move.
+import * as THREE from 'three';
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(45, 9/16, 0.1, 100);
+camera.position.z = 6;
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(1080, 1920);
+document.body.appendChild(renderer.domElement);
+const mesh = new THREE.Mesh(
+  new THREE.TorusKnotGeometry(1, 0.35, 128, 32),
+  new THREE.MeshStandardMaterial({ color: 0xff4d00 })
+);
+scene.add(mesh);
+scene.add(new THREE.AmbientLight(0xffffff, 0.8));
+function animate() {
+  requestAnimationFrame(animate);
+  mesh.rotation.x += 0.005;
+  mesh.rotation.y += 0.01;
+  renderer.render(scene, camera);
+}
+animate();</pre>
+<p>That is the whole idea: a scene, a camera, an object, a loop. Claude writes this from your description &mdash; you describe the object, the light and the camera move, and it writes the program that draws them.</p>
+<h3>3 starter prompts</h3>
+<p><b>1. A 3D orbit scene (Three.js, single HTML file):</b></p>
+<p><i>&ldquo;Build a 15-second 3D scene as a single HTML file using Three.js: a chrome torus knot rotating slowly in the centre, two thin orbit rings around it, warm key light, dark background. Vertical 1080&times;1920. The camera pushes in slowly the whole time. Render it to MP4.&rdquo;</i></p>
+<p><b>2. An animated chart:</b></p>
+<p><i>&ldquo;Animate this data as a 20-second chart video: [paste 4&ndash;6 numbers with labels]. Bars grow in one by one, the biggest number lands last with a count-up, clean light background, labels always readable. Vertical 1080&times;1920.&rdquo;</i></p>
+<p><b>3. Kinetic typography explainer (Remotion):</b></p>
+<p><i>&ldquo;Make a 30-second kinetic-typography explainer in Remotion. Topic: [your topic]. Big bold type, one idea per shot, words landing on the beat, dark background, one accent colour. Vertical 1080&times;1920. Render it to MP4.&rdquo;</i></p>
+<p>The same 3 prompts are in your free folder as a file you can keep: <a href="prompts.md">prompts.md</a>. The scene code from the video is there too: <a href="morph-scene.html">morph-scene.html</a>.</p>
+<h3>Render it to MP4</h3>
+<p><b>Three.js single file:</b> open it in Chrome and record the window (OBS, QuickTime, or any screen recorder). Or export the frames and encode them:</p>
+<pre>ffmpeg -framerate 60 -i frame_%04d.png -c:v libx264 -pix_fmt yuv420p out.mp4</pre>
+<p><b>Remotion:</b> render a composition straight to MP4 from the command line:</p>
+<pre>npx remotion render &lt;CompositionId&gt; out.mp4</pre>
+<p>Either way, the MP4 is produced on your machine. If the code has a bug, you see a broken frame &mdash; paste the error back to Claude and it fixes the code.</p>
+<h3>Honest limits</h3>
+<ul>
+<li><b>It writes code, it doesn&rsquo;t film.</b> No camera, no real footage, no photoreal people. Motion graphics, 3D scenes, charts and kinetic type &mdash; that is the lane. For photoreal humans and lifestyle footage, a video model is still the right tool.</li>
+<li><b>You need Claude Code.</b> The code-writing happens inside Claude Code, which needs a paid Claude plan. This is not a free web tool you open in a tab.</li>
+<li><b>The first render is rarely the keeper.</b> Budget for several render&ndash;review&ndash;fix rounds. Vague briefs get vague films &mdash; name the style, the length and the camera.</li>
+<li><b>Code output burns tokens.</b> Fable 5.2, the Anthropic model built for this kind of work, costs $8 per million input tokens and $40 per million output tokens on the API; short films in independent tests cost $1.40&ndash;$4.25 in tokens. Set a budget before you start iterating.</li>
+<li><b>You still have to render.</b> Claude hands you code; the MP4 comes from your browser, Remotion or Blender. If the code has a bug, you see a broken frame &mdash; paste the error back and it fixes it.</li>
+<li><b>No real footage generation.</b> Photos, screen recordings and footage are yours to supply. Code can draw a scene; it cannot film your desk.</li>
+</ul>
+<h3>Links</h3>
+<ul>
+<li>Claude Code (paid plan required): <a href="https://claude.com/product/claude-code">claude.com/product/claude-code</a></li>
+<li>Three.js: <a href="https://threejs.org/">threejs.org</a></li>
+<li>Remotion: <a href="https://www.remotion.dev/">remotion.dev</a></li>
+<li>Fable 5.2, what it makes and what it costs (independent guide, updated 16 Nov 2026): <a href="https://createmotion.io/guides/claude-fable-5-2-animation/">createmotion.io/guides/claude-fable-5-2-animation</a></li>
+</ul>
+<div class="pitch">
+<h2>Want the full skill?</h2>
+<p>This guide is the free DIY version &mdash; you set up the tools and run the workflow yourself. If you want the whole pipeline packaged &mdash; transcribe, cut the silences, pick the best takes, animated captions, SFX, and a mastered export &mdash; the Claude Video Editor skill does it in one command. $20, one-time payment: <a href="https://saadai.gumroad.com/l/claude-video-editor">saadai.gumroad.com/l/claude-video-editor</a></p>
+</div>
+<p class="foot">Made by Saad AI &mdash; follow @saad.aig on Instagram &amp; TikTok. One AI trend explained per video. Guide again at saadamir952-prog.github.io/saad-ai-guides/motion/</p>
+</div>
+</body>
+</html>
