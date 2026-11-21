@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>REVERSE: Reverse-Engineer Any Video, Shot by Shot — Free Guide | Saad AI</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0;}
+body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; background: #FAF6EF; color: #1A1A1A; line-height: 1.6; padding: 32px 20px 64px;}
+.wrap { max-width: 680px; margin: 0 auto;}
+.kicker { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: #C2571B; font-weight: 700; margin-bottom: 8px;}
+h1 { font-size: 40px; line-height: 1.08; font-weight: 900; letter-spacing: -0.5px; margin-bottom: 12px;}
+h1 .accent { color: #C2571B;}
+.sub { font-size: 18px; color: #555; margin-bottom: 28px;}
+h2 { font-size: 22px; margin: 32px 0 12px; padding-top: 20px; border-top: 2px solid #E8DFD2;}
+p, li { font-size: 16px; color: #333;}
+p { margin-bottom: 12px;}
+ul, ol { margin: 0 0 12px 22px;}
+li { margin-bottom: 6px;}
+code { background: #EFE7D8; padding: 2px 6px; border-radius: 4px; font-size: 14px;}
+pre { background: #1A1A1A; color: #F2EDE3; padding: 16px; border-radius: 10px; overflow-x: auto; font-size: 14px; line-height: 1.45; margin: 10px 0 16px; white-space: pre-wrap; word-break: break-all;}
+.warn { background: #FFF4E5; border-left: 4px solid #E8A33D; padding: 14px 16px; border-radius: 0 8px 8px 0; margin: 16px 0;}
+.guide { background: #fff; border: 1px solid #E8DFD2; border-radius: 12px; padding: 20px; margin: 16px 0;}
+.pitch { background: #1A1A1A; color: #F2EDE3; border-radius: 12px; padding: 22px; margin: 28px 0;}
+.pitch h2 { border: none; padding: 0; margin: 0 0 10px; color: #fff;}
+.pitch p { color: #D8D2C4;}
+.pitch a { color: #F0A35E; font-weight: 700;}
+a { color: #C2571B;}
+.foot { font-size: 13px; color: #999; margin-top: 32px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="kicker">Saad AI &middot; Free guide &middot; Keyword: REVERSE</div>
+<h1>See how any video was made. <span class="accent">Then remake it your way.</span></h1>
+<p class="sub">rea-video is a free, open-source skill that reverse-engineers any video shot by shot — every cut, every caption, every sound — and hands you the plan to rebuild it with your own material.</p>
+
+<h2>What this guide covers</h2>
+<ul>
+<li><b>Install in one line</b> — the exact command, plus the repo install if you prefer it, and the two things you need first (ffmpeg and Python 3.10+).</li>
+<li><b>Your first breakdown</b> — the exact prompt to run on any video, and how long to expect it to take.</li>
+<li><b>How to read the report</b> — the shot list, the remake plan, the music BPM and sound effects, the caption files, and what a real report looks like (from a run on our machine: 8 shots, 136 BPM, 43 subtitle lines).</li>
+</ul>
+
+<h2>Install it</h2>
+<pre>npx skills add JuneYaooo/rea-video</pre>
+<p>Then open Claude Code or Codex and prompt: <i>&ldquo;break down this video: /path/to/video.mp4&rdquo;</i>. The full step-by-step is in the guide below.</p>
+
+<div class="guide">
+<h2>Get the free guide</h2>
+<p>The full guide is on this page — no email needed, no sign-up, no download. Scroll down and read it here.</p>
+<p><a href="#guide">Read the full guide ↓</a></p>
+</div>
+
+<div class="warn">
+<b>The honest limit.</b> rea-video does <b>NOT render the finished remake for you.</b> It gives you the plan — the recipe. The remake itself is a separate step. If anyone tells you &ldquo;it remakes the video for you&rdquo;, that is not what this tool does.
+</div>
+
+<h2 id="guide">The full guide</h2>
+<p><b>What rea-video is.</b> A free, open-source skill by JuneYaooo (Apache-2.0, created 29 October 2026, v0.1.0 released 11 November 2026) that runs inside Claude Code and Codex. 11,440 stars as of 21 November 2026 — up 2,800 in the previous 7 days, crossed 10,000 stars on 17 November. Repo: <a href="https://github.com/JuneYaooo/rea-video">github.com/JuneYaooo/rea-video</a>.</p>
+<p><b>Do not confuse it with &ldquo;REA — Reverse Engineer Anything&rdquo;</b> (morluto/rea) — that tool reverse-engineers software binaries. rea-video reverse-engineers videos.</p>
+<p><b>What you get.</b> Every shot labelled filmed, AI-generated, coded, 3D, screen recording, or avatar — plus cut positions, beats, human vs AI voice, music BPM, and styled text/captions. Output: a shot-by-shot breakdown, a remake plan, and a <code>report.html</code> (VIDEO.md format).</p>
+<p><b>Requirements.</b> ffmpeg, Python 3.10+, and Claude Code or Codex.</p>
+<p><b>Install.</b> <code>npx skills add JuneYaooo/rea-video</code> — or install from the GitHub repo and follow its README.</p>
+<p><b>First breakdown.</b> Prompt: <i>&ldquo;break down this video: /path/to/video.mp4&rdquo;</i>. A 30-second reel takes a few minutes; do not interrupt it — the report is written at the end.</p>
+<p><b>How to read the report.</b> Start with <code>VIDEO.md</code> (verdict, narrative line, map of every file), then <code>report.html</code> in a browser. The shot list is the heart: one row per shot with its time, job, camera move, and remake route. <code>video/remake.md</code> is the practical plan — content, real material to collect, code rebuild, edit, sound. <code>packaging/</code> holds the subtitle files (<code>subtitles.srt</code>, <code>overlays.ass</code>, <code>timeline.json</code>). <code>sfx/</code> holds a clip of each sound effect; <code>stems/</code> holds the voice, music, and effects tracks apart. <code>shots/</code> and <code>frames/</code> hold the frames and element crops to rebuild from. <code>storyboard.jpg</code> shows the whole video on one page.</p>
+<p><b>What a real report looks like.</b> Our run on a 32.7-second reel, 13 November 2026: 8 shots (4.1s average), code / template render 100%, confidence 82%, music 136 BPM in F major, 16 sound-effect hits (14 distinct), 43 subtitle lines, 12.9 cuts per minute. Real material needed: a photo and a screen recording — the rest was code-rendered.</p>
+<p><b>Trust, but check.</b> Things are labelled <i>seen</i> (measured) or <i>inferred</i> (judgement). When they disagree, trust the frames. The Open questions section lists what the tool could not settle — in our run, the music and voice sources were both &ldquo;to confirm&rdquo;. Treat those as homework, not answers.</p>
+<p><b>Remake it yourself.</b> (1) Write the narrative line first — same order and job per stretch, your own cases and numbers. (2) List the real material you need. (3) Rebuild the coded shots in Remotion or HTML. (4) Cut to the measured lengths. (5) Add captions from the packaging files. (6) Add sound last — music at the measured BPM, one effect per hit. (7) Compare side by side and fix the worst-matching shots first.</p>
+<p><b>Want the guide as a file?</b> <a href="install-guide.txt">Download the install guide as a plain-text file</a> — keep it next to your terminal.</p>
+
+<div class="pitch">
+<h2>Next step: turn the plan into a finished edit</h2>
+<p>rea-video gives you the plan. Turning that plan into a finished, watchable edit is a separate skill — cutting, captioning, sound design, and rendering, all inside Claude.</p>
+<p>That is what the <b>Claude Video Editor skill</b> teaches: <b>&ldquo;How to Turn Your Claude Into a Professional Editor&rdquo;</b> — $20, on Gumroad:</p>
+<p><a href="https://saadai.gumroad.com/l/claude-video-editor">saadai.gumroad.com/l/claude-video-editor</a></p>
+<p>If this guide showed you <i>how a video you admire was built</i>, the skill is the next step: it shows you how to <i>build yours</i>.</p>
+</div>
+
+<p class="foot">Saad AI — free guide. rea-video is by JuneYaooo, Apache-2.0. Star counts verified 21 November 2026 via GitTrend. Example run figures are from a real rea-video run on our machine, 13 November 2026.</p>
+</div>
+</body>
+</html>
