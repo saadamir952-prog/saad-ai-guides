@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>morph.js — the 3D scene from the MOTION video</title>
+<!--
+  THE SCENE FROM THE VIDEO. This is the actual code that rendered the
+  morphing object in @saad.aig's "How Claude makes motion videos" reel:
+  code fragments fall and assemble a wireframe cube, the cube rotates,
+  morphs into a sphere, pulses, dissolves, loops. Three.js r149.
+  Open this file in a browser — it plays. Change a word and the scene
+  changes: try TEAL (0x00A896) -> another colour, SIZE (2.4) -> bigger,
+  or the morph window sstep(5, 7.5, t) -> faster.
+  Written by Claude, rendered by your browser. No video file involved.
+-->
+<style>
+  html, body { margin: 0; padding: 0; width: 100%; height: 100%;
+    background: #FFF7F0; overflow: hidden; }
+  #app { width: 100%; height: 100%; }
+  canvas { display: block; }
+</style></head>
+<body>
+<div id="app"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.149.0/three.min.js"></script>
+<script>
+/* MOTION 3D — morph scene (Three.js r149, UMD). OUR OWN scene, rendering live.
+   The object chain (Prompt Motion pattern #1 — one object, never cuts):
+   code fragments fall and assemble into a wireframe cube (0-2 s), the cube
+   rotates (2-5 s), morphs into a blob/sphere (5-7.5 s), pulses (7.5-10 s),
+   dissolves back to fragments (10-12 s), loops. Teal #00A896 on paper.
+   Clock starts 4 s after load (matches record.sh warmup) so the recording
+   catches the assembly from its first frame.
+   Framing: portrait-safe — the object stays inside the center 71% (the
+   Remotion footage window crops the sides). Cube 2.4 units, camera z=10. */
+function buildMorphScene(container) {
+  var W = container.clientWidth, H = container.clientHeight;
+  var renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setSize(W, H);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setClearColor(0xFFF7F0, 1);
+  container.appendChild(renderer.domElement);
+
+  var scene = new THREE.Scene();
+  var camera = new THREE.PerspectiveCamera(40, W / H, 0.1, 100);
+  camera.position.set(0, 0.4, 10);
+  camera.lookAt(0, 0, 0);
+
+  scene.add(new THREE.HemisphereLight(0xfff6e6, 0xd8cdb8, 0.7));
+  var sun = new THREE.DirectionalLight(0xffffff, 0.5);
+  sun.position.set(6, 10, 8);
+  scene.add(sun);
+
+  var TEAL = 0x00A896, INK = 0x141414;
+  var SIZE = 2.4, HALF = SIZE / 2, SPHERE_R = 1.7;
+  var group = new THREE.Group();
+  scene.add(group);
+  // --- the object: subdivided cube (faces) + clean 12-edge wireframe -----
+  // Both morph cube -> sphere with the same vertex formula.
+  function morphTargets(geo, radius) {
+    var p = geo.attributes.position;
+    var b = new Float32Array(p.array);
+    var s = new Float32Array(p.count * 3);
+    for (var i = 0; i < p.count; i++) {
+      var x = b[i * 3], y = b[i * 3 + 1], z = b[i * 3 + 2];
+      var len = Math.sqrt(x * x + y * y + z * z) || 1;
+      s[i * 3] = x / len * radius;
+      s[i * 3 + 1] = y / len * radius;
+      s[i * 3 + 2] = z / len * radius;
+    }
+    return { pos: p, base: b, sphere: s };
+  }
+  var faceGeo = new THREE.BoxGeometry(SIZE, SIZE, SIZE, 8, 8, 8);
+  var faceT = morphTargets(faceGeo, SPHERE_R);
+  var faceMat = new THREE.MeshLambertMaterial({
+    color: TEAL, transparent: true, opacity: 0.10, side: THREE.DoubleSide});
+  group.add(new THREE.Mesh(faceGeo, faceMat));
+
+  var edgeGeo = new THREE.BoxGeometry(SIZE, SIZE, SIZE, 1, 1, 1);
+  // clean 12-edge outline (EdgesGeometry: no face diagonals, unlike wireframe)
+  var edgeLines = new THREE.LineSegments(
+    new THREE.EdgesGeometry(edgeGeo),
+    new THREE.LineBasicMaterial({ color: INK, transparent: true, opacity: 0.85 }));
+  group.add(edgeLines);
+  // the EdgesGeometry positions morph with the same formula (per-vertex)
+  var edgeLineT = morphTargets(edgeLines.geometry, SPHERE_R);
+  // --- code fragments: thin dashes that assemble into the cube ------------
+  var N = 220, seeded = 7;
+  function rnd() { seeded = (seeded * 16807) % 2147483647; return seeded / 2147483647; }
+  var fragGeo = new THREE.BoxGeometry(0.11, 0.035, 0.035);
+  var frags = new THREE.InstancedMesh(fragGeo, new THREE.MeshBasicMaterial({ color: INK }), N);
+  var fragTeal = new THREE.InstancedMesh(
+    fragGeo, new THREE.MeshBasicMaterial({ color: TEAL }), 60);
+  group.add(frags);
+  group.add(fragTeal);
+  var dummy = new THREE.Object3D();
+  function surfacePoint() {
+    var f = Math.floor(rnd() * 6), u = (rnd() * 2 - 1) * HALF, v = (rnd() * 2 - 1) * HALF;
+    var p = [0, 0, 0];
+    if (f === 0) p = [HALF, u, v]; else if (f === 1) p = [-HALF, u, v];
+    else if (f === 2) p = [u, HALF, v]; else if (f === 3) p = [u, -HALF, v];
+    else if (f === 4) p = [u, v, HALF]; else p = [u, v, -HALF];
+    return p;
+  }
+  var fragData = [];
+  for (var k = 0; k < N + 60; k++) {
+    var sp = surfacePoint();
+    fragData.push({
+      sx: (rnd() * 2 - 1) * 4.5, sy: 3.5 + rnd() * 6, sz: (rnd() * 2 - 1) * 2.5,
+      tx: sp[0], ty: sp[1], tz: sp[2], delay: rnd() * 1.4, spin: rnd() * Math.PI * 2
+    });
+  }
+  // --- orbit rings (thin ink rings around the object) ----------------------
+  var ringMat = new THREE.MeshBasicMaterial({ color: INK, transparent: true, opacity: 0.35 });
+  var ring1 = new THREE.Mesh(new THREE.TorusGeometry(3.0, 0.018, 8, 128), ringMat);
+  ring1.rotation.set(1.25, 0.2, 0);
+  group.add(ring1);
+  var ring2 = new THREE.Mesh(new THREE.TorusGeometry(3.3, 0.014, 8, 128), ringMat);
+  ring2.rotation.set(0.5, 1.1, 0.4);
+  group.add(ring2);
+  var sat = new THREE.Mesh(new THREE.SphereGeometry(0.1, 12, 12),
+    new THREE.MeshBasicMaterial({ color: TEAL }));
+  ring1.add(sat);
+  sat.position.set(3.0, 0, 0);
+
+  function sstep(a, b, x) {
+    var t = Math.max(0, Math.min(1, (x - a) / (b - a)));
+    return t * t * (3 - 2 * t);
+  }
+  function easeOut(a, b, x) {
+    var t = Math.max(0, Math.min(1, (x - a) / (b - a)));
+    return 1 - Math.pow(1 - t, 3);
+  }
+  function applyMorph(T, m) {
+    var p = T.pos, b = T.base, s = T.sphere;
+    for (var i = 0; i < p.count; i++) {
+      p.array[i * 3] = b[i * 3] + (s[i * 3] - b[i * 3]) * m;
+      p.array[i * 3 + 1] = b[i * 3 + 1] + (s[i * 3 + 1] - b[i * 3 + 1]) * m;
+      p.array[i * 3 + 2] = b[i * 3 + 2] + (s[i * 3 + 2] - b[i * 3 + 2]) * m;
+    }
+    p.needsUpdate = true;
+  }
+  var START_DELAY = 500; // ms after load
+  var t0 = performance.now() + START_DELAY;
+  var PERIOD = 12;
+  function animate() {
+    requestAnimationFrame(animate);
+    var tAbs = Math.max(0, (performance.now() - t0) / 1000);
+    var t = tAbs % PERIOD;
+    var assemble = sstep(0, 2, t);
+    var morph = sstep(5, 7.5, t);
+    var dissolve = sstep(10, 12, t);
+    var vis = 1 - dissolve;
+
+    applyMorph(faceT, morph);
+    applyMorph(edgeLineT, morph);
+    var pulse = 1 + Math.sin(t * 2.2) * 0.012 * morph;
+    group.scale.setScalar(pulse * (0.55 + 0.45 * assemble));
+    group.rotation.y = t * 0.18;
+    group.rotation.x = Math.sin(t * 0.12) * 0.1;
+    faceMat.opacity = 0.10 * vis;
+    edgeLines.material.opacity = 0.85 * vis;
+    ringMat.opacity = 0.35 * vis;
+    ring1.rotation.z = t * 0.15;
+    ring2.rotation.z = -t * 0.1;
+    for (var k = 0; k < fragData.length; k++) {
+      var d = fragData[k];
+      var a = easeOut(d.delay, d.delay + 0.7, t);
+      var out = sstep(10, 12, t);
+      var f = a * (1 - out);
+      // fragments BECOME the object: shrink away 0.7 s after landing,
+      // so the assembled cube is clean (no confetti stuck on it)
+      var landed = sstep(d.delay + 0.7, d.delay + 1.4, t) * (1 - out);
+      dummy.position.set(
+        d.sx + (d.tx - d.sx) * f,
+        d.sy + (d.ty - d.sy) * f + out * 3 * (0.5 + (k % 5) * 0.2),
+        d.sz + (d.tz - d.sz) * f);
+      dummy.rotation.set(d.spin + t * 0.4, d.spin, 0);
+      dummy.scale.setScalar((0.6 + 0.4 * f) * (1 - landed));
+      dummy.updateMatrix();
+      if (k < N) frags.setMatrixAt(k, dummy.matrix);
+      else fragTeal.setMatrixAt(k - N, dummy.matrix);
+    }
+    frags.instanceMatrix.needsUpdate = true;
+    fragTeal.instanceMatrix.needsUpdate = true;
+    // slow motivated push-in: inspect the object
+    var dolly = Math.min(tAbs / 20, 1);
+    camera.position.z = 10 - dolly * 1.2;
+    camera.position.y = 0.4 + Math.sin(tAbs * 0.1) * 0.15;
+    camera.lookAt(0, 0, 0);
+    renderer.render(scene, camera);
+  }
+  animate();
+  return { renderer: renderer, scene: scene, camera: camera };
+}
+
+</script>
+<script>buildMorphScene(document.getElementById('app'));</script>
+</body></html>
