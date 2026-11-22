@@ -1,0 +1,107 @@
+# RETAKE: Film Messy — Claude Keeps the Last Take — Free Guide
+
+**By Saad AI — free guide. Keyword: RETAKE.**
+
+## The rule in one line
+
+Shoot one continuous take. Never stop the recording. When you flub a line, restart the whole sentence — never pick up mid-sentence. Claude edits from the transcript and keeps only the last version of each line.
+
+## The cost — read this first
+
+This technique uses **Claude Code to edit from the transcript**, and Claude Code needs **a paid Claude plan**. That is the one paid part.
+
+The filming rule itself costs nothing. The measuring tools are free too: **local Whisper** for transcription and **ffmpeg** for measuring the pauses. No subscription, no extra tool, no paid app to film this way.
+
+## The proof — our own messy take
+
+We filmed one sentence — "Claude keeps the last take." — three times in a single continuous take, without stopping the recording. Measured with local Whisper transcription + silencedetect.
+
+- **Raw messy take: 7.6 seconds** — 3 attempts of the same sentence
+- **Pauses cut: 2.7 seconds** — 1.2 s + 1.5 s of hesitation between attempts
+- **Repeats removed: 2** — the first two attempts, gone
+- **Finished take: 1.8 seconds** — the last attempt only
+
+7.6 seconds of messy filming became 1.8 seconds of clean video. Nothing was re-shot. The edit was just removing what was already there.
+
+Measured on our own take, 22 Nov 2026.
+
+## Why it works
+
+Claude never watches your video. It reads the transcript. When the same sentence appears three times in a row, the transcript makes the pattern obvious: attempt one, attempt two, attempt three — and only the last one is the keeper. Claude cuts the earlier versions and the pauses between them, and the take that is left sounds like you nailed it first time.
+
+That only works if the transcript can tell the attempts apart. That is why the filming rule matters, and why the mid-sentence catch matters most.
+
+## The filming checklist
+
+Do this before you press record. The whole method depends on it.
+
+1. **One continuous take.** Press record once. Do not stop until the whole section is done. Stopping and starting again creates separate clips, and Claude cannot see the attempts as one sequence.
+2. **Restart the sentence, never the recording.** Flub a word? Pause, take a breath, and say the whole sentence again from the start.
+3. **Never pick up mid-sentence.** Do not restart from the word you messed up. A half-sentence in the transcript looks like a new line, not a repeat — Claude cannot tell which half is the keeper.
+4. **Leave a beat between attempts.** A short pause after a flub is what separates the attempts in the transcript. Do not rush straight into the retry.
+5. **Say the sentence the same way each time.** Same words, same order. If you change the wording, it is not a repeat — it is a different line, and Claude will keep both.
+6. **Keep going after the good one.** One clean take is enough. Move on to the next sentence; do not re-record a line that already landed.
+
+## The mid-sentence catch — the one mistake that breaks it
+
+This is the mistake that kills the method: you flub the last word of a sentence and restart from that word.
+
+Say the sentence is "Claude keeps the last take." You say "Claude keeps the last—" and stop. Then you say "take." and move on. In the transcript that reads as two fragments, not two attempts. Claude has no clean version to keep and no repeat to cut — it either keeps both fragments, or cuts the wrong piece.
+
+Restart the whole sentence instead: "Claude keeps the last—" … pause … "Claude keeps the last take." Now the transcript shows a false start and a full clean version. Claude keeps the clean one and cuts the false start. That is the entire trick.
+
+**If you remember one thing: restart the sentence, never the word.**
+
+## Direct the edit in one-sentence commands
+
+Once the take is filmed, tell Claude what you want in plain English — one sentence per job. These three cover almost every messy take:
+
+- **"Cut the silences."**
+- **"Punch in on the hook."**
+- **"Subtitles on."**
+
+Say them one at a time, check the result, then give the next one. Short commands keep the edit predictable: each one does one job, and if something looks wrong you know which command caused it.
+
+## The exact prompt — paste this into Claude Code
+
+Copy this, replace the file name with your own, and paste it into Claude Code:
+
+> Transcribe messy-take.mp4. For every sentence I repeated, keep only the last version of it and cut the earlier attempts. Cut the pauses between attempts. Then punch in on the hook and add word-by-word subtitles.
+
+That is the whole prompt. It says the four things Claude needs to do, in order:
+
+1. **Transcribe** — read the take as text.
+2. **Keep only the last version of each repeated sentence** — the retake rule, applied to the transcript.
+3. **Cut the pauses** — remove the hesitations between attempts.
+4. **Punch in on the hook and add word-by-word subtitles** — the finish.
+
+If the result keeps a repeat you wanted gone, point at it in plain words: "Cut the first two attempts of the sentence about the last take." Claude re-cuts from the transcript — you never touch a timeline.
+
+## What you need
+
+- **Claude Code** — a paid Claude plan (see the cost box at the top).
+- **A camera or phone** — anything that records one continuous take.
+- **ffmpeg** — free, for measuring pauses if you want to check your own numbers.
+- **Local Whisper** — free, for transcription if you want to see the transcript yourself.
+
+No other tool. No editing app. The filming rule does the work before the edit starts.
+
+## Honest limits
+
+- **Claude Code is paid.** The filming rule is free, the measuring tools are free, the seat is not.
+- **It only fixes repeats you filmed as repeats.** If you picked up mid-sentence, the transcript has fragments, not attempts — re-film the line properly instead of asking Claude to guess.
+- **It keeps the last version, not the best version.** If your last attempt is the worst one, say the sentence once more. The keeper is always the final attempt.
+- **Check the export before you post.** Watch the finished take once, end to end. If a cut lands mid-word, tell Claude which sentence and it re-cuts.
+- **The numbers above are from one take on our machine.** Your messy take will have different numbers. The shape of the result — raw take in, clean last attempt out — is the same.
+
+## Next step: turn messy takes into finished edits
+
+This guide is the free version — one rule, one prompt, and the proof from our own take. Turning that into a finished, watchable edit every time — cutting, captioning, sound design, and rendering, all inside Claude — is a separate skill.
+
+That is what the **Claude Video Editor skill** teaches: **"How to Turn Your Claude Into a Professional Editor"** — $20, one-time payment, on Gumroad: [GUMROAD-LINK]
+
+If the RETAKE guide showed you how to film so the edit is easy, the skill is the next step: it shows you how to finish the edit — one prompt at a time, in Claude Code. Get the guide above for free; get the skill when you are ready to edit.
+
+---
+
+*Saad AI — free guide. Measured on our own take, 22 Nov 2026, with local Whisper transcription + silencedetect. Guide again at https://saadamir952-prog.github.io/saad-ai-guides/retake/*
