@@ -1,0 +1,102 @@
+CAPTIONS: Your Captions Are Why They Scroll — Free Guide
+
+By Saad AI — free guide. Keyword: CAPTIONS.
+
+THE RULE IN ONE LINE
+
+Captions are not subtitles. Subtitles transcribe; captions sell the watch. One word at a time, each word on the frame it was spoken, one keyword to land on.
+
+THE COST — READ THIS FIRST
+
+This technique uses Claude Code to caption from the transcript, and Claude Code needs a paid Claude plan. That is the one paid part.
+
+The captioning tools themselves are free: local Whisper for word timings and ffmpeg for the export. No subscription, no extra tool, no caption app.
+
+THE PROOF — A REAL CAPTION RUN
+
+We ran the real caption tool (generate_captions.py, faster-whisper backend) on this video's own voiceover. Measured, not invented:
+
+- 83 words — every word in the voiceover, timed
+- 31 lines — grouped so the eye can follow one line at a time
+- Every word on the frame it was spoken — not early, not late
+
+83 words, every one on time. That is the whole proof: the captions in the video you just watched were timed by the same run this guide teaches.
+
+Measured on our own voiceover, 22 Nov 2026.
+
+WHY IT WORKS
+
+A viewer decides in the first second whether to keep watching, and the captions are the first thing their eye tracks. A full sentence on screen is a wall — nobody reads a wall, they scroll past it. One word at a time gives the eye a rhythm to follow, and a highlighted keyword gives it somewhere to land.
+
+The timing is the part people miss. A caption that arrives after the word was spoken feels broken — the eye and the ear disagree, and the viewer leaves without knowing why. A caption that lands on the exact frame the word is spoken feels invisible, and invisible is the point: the viewer watches the video, not the captions.
+
+THE CAPTION CHECKLIST
+
+Check every caption against these five rules before you post:
+
+1. One word at a time. Never the whole sentence at once. A wall of text is a scroll signal.
+2. Every word on the frame it was spoken. Not early, not late. If the caption and the voice disagree by even a few frames, it feels wrong.
+3. One word to land on. Highlight the keyword in each line — the word that carries the meaning. If every word looks the same, the eye has nowhere to land.
+4. Big enough to read at a glance. If the viewer has to squint, the caption has already failed. Test it on a phone, at arm's length.
+5. Keyword pops, not decoration. A pop draws the eye to the word that matters. Popping every word is the same as popping none.
+
+MISTAKE ONE — THE WHOLE SENTENCE AT ONCE
+
+The most common caption mistake: the full sentence appears the moment the speaker starts it, and sits there until the sentence ends. The viewer reads ahead, gets bored, and scrolls — or doesn't read at all, because a wall of text looks like work.
+
+Fix: show one word at a time, each word appearing on the frame it is spoken. The viewer's eye stays with the voice instead of racing ahead of it.
+
+MISTAKE TWO — EVERY WORD LOOKS THE SAME
+
+Same size, same weight, same color, every word. Nothing tells the eye where the meaning is, so the eye wanders — and a wandering eye scrolls.
+
+Fix: pick the keyword in each line and make it the one thing that stands out — a different color, a bolder weight, a small pop as it lands. One highlighted word per line is enough. Two is a competition; three is noise.
+
+THE CATCH
+
+Captions can't save a boring video — they sell a good one. If the video itself has nothing worth watching, perfect captions just make the boredom legible. Make the video worth selling first; the captions are how you sell it.
+
+THE EXACT PROMPT — PASTE THIS INTO CLAUDE CODE
+
+Copy this, replace the file name with your own, and paste it into Claude Code:
+
+Add word-by-word captions to my-video.mp4: one word at a time, each word on the frame it was spoken, highlight the keyword in each line, big enough to read at a glance.
+
+That is the whole prompt. It says the four things Claude needs to do:
+
+1. One word at a time — never the whole sentence at once.
+2. Each word on the frame it was spoken — timed from the transcript, not guessed.
+3. Highlight the keyword in each line — one word to land on.
+4. Big enough to read at a glance — sized for a phone screen.
+
+If a caption lands late, point at it in plain words: "The word 'scroll' lands two frames late — move it to the frame it's spoken." Claude re-times from the transcript — you never touch a timeline.
+
+WHAT YOU NEED
+
+- Claude Code — a paid Claude plan (see the cost box at the top).
+- A video with a voiceover — the captions are timed to your voice.
+- Local Whisper — free, for the word timings.
+- ffmpeg — free, for the export.
+
+No other tool. No caption app. The transcript does the timing.
+
+HONEST LIMITS
+
+- Claude Code is paid. The captioning tools are free, the seat is not.
+- Captions can't save a boring video. They sell a good one. If the video has no hook, fix the video first.
+- Check the export before you post. Watch the finished video once, end to end. If a word lands late or a keyword is wrong, tell Claude which line and it re-times.
+- The numbers above are from one run on our machine. Your voiceover will have a different word count. The shape of the result — every word on time — is the same.
+
+NEXT STEP: CAPTIONS ARE ONE JOB IN THE EDIT
+
+This guide is the free version — one checklist, one prompt, and the proof from our own run. Turning that into a finished, watchable edit every time — cutting, captioning, sound design, and rendering, all inside Claude — is a separate skill.
+
+That is what the Complete Editor Pack teaches: "How to Turn Your Claude Into a Professional Editor" — the full skill, a setup guide, a walkthrough video, 15 sound effects, 3 ready workflows, and free updates. $39, one-time payment, on Gumroad: https://saadai.gumroad.com/l/complete-editor-pack
+
+Just want the skill on its own? The starter version is $20, one-time: https://saadai.gumroad.com/l/claude-video-editor
+
+If the CAPTIONS guide showed you how to time captions so people keep watching, the pack is the next step: it shows you how to finish the whole edit — one prompt at a time, in Claude Code. Get the guide above for free; get the pack when you are ready to edit.
+
+---
+
+Saad AI — free guide. Measured on our own voiceover, 22 Nov 2026, with faster-whisper + generate_captions.py. Guide again at https://saadamir952-prog.github.io/saad-ai-guides/captions/
