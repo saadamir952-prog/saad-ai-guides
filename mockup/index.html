@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MOCKUP: Edit Before You Film — Free Guide | Saad AI</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0;}
+body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; background: #FAF6EF; color: #1A1A1A; line-height: 1.6; padding: 32px 20px 88px;}
+.wrap { max-width: 680px; margin: 0 auto;}
+.kicker { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: #0D9488; font-weight: 700; margin-bottom: 8px;}
+h1 { font-size: 40px; line-height: 1.08; font-weight: 900; letter-spacing: -0.5px; margin-bottom: 12px;}
+h1 .accent { color: #0D9488;}
+.sub { font-size: 18px; color: #555; margin-bottom: 28px;}
+h2 { font-size: 22px; margin: 32px 0 12px; padding-top: 20px; border-top: 2px solid #E8DFD2;}
+h3 { font-size: 17px; margin: 20px 0 6px;}
+p, li { font-size: 16px; color: #333;}
+p { margin-bottom: 12px;}
+ul, ol { margin: 0 0 12px 22px;}
+li { margin-bottom: 6px;}
+code { background: #EFE7D8; padding: 2px 6px; border-radius: 4px; font-size: 14px;}
+pre { background: #1A1A1A; color: #F2EDE3; padding: 16px; border-radius: 10px; overflow-x: auto; font-size: 14px; line-height: 1.45; margin: 10px 0 16px; white-space: pre-wrap; word-break: break-all;}
+.proof { background: #fff; border: 1px solid #E8DFD2; border-radius: 12px; padding: 20px; margin: 16px 0;}
+.proof b { color: #0D9488;}
+.proof .big { font-size: 28px; font-weight: 900; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 8px;}
+.proof .big .accent { color: #0D9488;}
+.warn { background: #FFF4E5; border-left: 4px solid #E8A33D; padding: 14px 16px; border-radius: 0 8px 8px 0; margin: 16px 0;}
+.guide { background: #fff; border: 1px solid #E8DFD2; border-radius: 12px; padding: 20px; margin: 16px 0;}
+.step { display: flex; gap: 14px; margin-bottom: 14px;}
+.step .n { flex: 0 0 30px; height: 30px; border-radius: 50%; background: #0D9488; color: #fff; font-weight: 800; text-align: center; line-height: 30px;}
+.pitch { background: #1A1A1A; color: #F2EDE3; border-radius: 12px; padding: 22px; margin: 28px 0;}
+.pitch h2 { border: none; padding: 0; margin: 0 0 10px; color: #fff;}
+.pitch p { color: #D8D2C4;}
+.pitch a { color: #5EEAD4; font-weight: 700;}
+a { color: #0D9488;}
+.sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; background: #1A1A1A; color: #F2EDE3; padding: 14px 20px; text-align: center; font-size: 15px; z-index: 100;}
+.sticky-cta a { color: #5EEAD4; font-weight: 700;}
+.foot { font-size: 13px; color: #999; margin-top: 32px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="kicker">Saad AI &middot; Free guide &middot; Keyword: MOCKUP</div>
+<h1>Edit before you film. <span class="accent">The mock-up hack.</span></h1>
+<p class="sub">Pixar edits the movie before they make it. Now you can do it with your phone: build a watchable rough version first, fix the weak line in the mock-up, then film once.</p>
+
+<div class="proof">
+<p class="big">Same line, <span class="accent">two versions.</span></p>
+<p><b>Riley Brown films nothing first</b> &mdash; script, then a mock-up with a stand-in voice, watches it, fixes it, films once. <b>He says 90% stays the same</b> (his claim, not our measurement).</p>
+<p><b>Our own demo:</b> the same line as a rough mock-up &mdash; grey card, monospace, DRAFT stamp, stand-in voice &mdash; and as the filmed take. The hook changed in the mock-up, not on set.</p>
+<p><b>The payoff:</b> mistakes are free in the mock-up. On camera, they cost you five takes.</p>
+<p><i>The mock-up draft in the video is a real artifact of this build — a rough card with a real stand-in voice. The Jobs line is from his 1996 interview.</i></p>
+</div>
+
+<h2>What this guide covers</h2>
+<ul>
+<li><b>The method</b> &mdash; three steps: script, mock-up, watch like a viewer.</li>
+<li><b>The exact prompt</b> &mdash; copy-paste into Claude Code, fill in the brackets.</li>
+<li><b>The honest proof</b> &mdash; the same line as mock-up vs filmed take, side by side.</li>
+<li><b>The cost, stated first</b> &mdash; the free version uses a free local voice (Kokoro). Riley&rsquo;s version uses paid ElevenLabs cloning — not what this guide teaches.</li>
+<li><b>The catch</b> &mdash; a mock-up is a draft, not the video. A stand-in voice is not your delivery.</li>
+</ul>
+
+<div class="guide">
+<h2>Get your free guide</h2>
+<p>The full guide is on this page — <b>free, no email needed, no sign-up, no download.</b> Scroll down and read it here.</p>
+<p><a href="#guide">Read the full guide ↓</a></p>
+</div>
+
+<div id="guide">
+<div class="warn">
+<b>The cost — read this first.</b> This method is <b>free</b>. The mock-up uses a <b>free local voice</b> (Kokoro, free and open-source, runs on your own machine) and rough visuals you draw yourself — grey cards, plain text, no grade, no polish. <b>Claude Code needs a paid Claude plan</b> — that is the one paid part, and you already need it for the script step. <b>Do not confuse this with the paid version:</b> Riley Brown&rsquo;s reel uses ElevenLabs voice cloning (paid) for his mock-up voice. This guide teaches the <b>free version</b>: a stand-in voice that sounds like a stand-in. It is supposed to sound rough. The mock-up is a draft, not the video.
+</div>
+
+<h2>The exact prompt (copy-paste)</h2>
+<p>Paste this into Claude Code, then fill in the brackets:</p>
+<pre>You are my video editor. Before I film anything, build me a watchable
+mock-up of this video.
+
+Topic: [YOUR TOPIC, one sentence]
+Audience: [WHO IT IS FOR]
+One idea: [THE ONE THING THE VIEWER WALKS AWAY WITH]
+
+1. Write the script first — Hook (0–3 s), Lead, Body (3 steps max),
+   CTA. Keep it under 130 words, about 30 seconds spoken.
+2. Make the mock-up: read the script aloud in a stand-in voice (any
+   free local voice — I use Kokoro, free), and lay it over rough
+   visuals — grey cards, plain text, no grade, no polish. Time every
+   visual to the script.
+3. I watch the mock-up like a viewer. Tell me: which line is weak?
+   Which second loses me? Rewrite the weak line in the mock-up,
+   not on camera.
+
+Rules: the mock-up is a draft, not the video. A stand-in voice is not
+my delivery. I film once, after the mock-up is fixed.</pre>
+
+<h2>The 3-step checklist</h2>
+<div class="step"><div class="n">1</div><div><b>Script in Claude.</b> Hook, lead, body, CTA. Under 130 words. One idea, one technique, one video.</div></div>
+<div class="step"><div class="n">2</div><div><b>Mock-up, timed to the script.</b> Rough voice + rough visuals. If it looks finished, it is not a mock-up — make it rougher.</div></div>
+<div class="step"><div class="n">3</div><div><b>Watch it like a viewer.</b> The weak line gets rewritten BEFORE the camera rolls. If nothing changes between the mock-up and the film, you watched it like an editor, not a viewer — watch it again.</div></div>
+
+<h2>The catch</h2>
+<p>A mock-up is a draft, not the video. It cannot replace the real take, and a cloned voice is not your delivery. If the mock-up sounds good enough to ship, you have not made a mock-up — you have made a bad video. The mock-up&rsquo;s job is to be wrong cheaply: mistakes are free in the mock-up. On camera, they cost you five takes.</p>
+
+<h2>What it costs, in full</h2>
+<ul>
+<li>Kokoro voice (local, free): $0</li>
+<li>Rough visuals (grey cards, plain text): $0</li>
+<li>Claude Code: needs a paid Claude plan (the one paid part)</li>
+<li>Riley&rsquo;s ElevenLabs cloning version: paid — NOT what this guide teaches</li>
+</ul>
+</div>
+
+<div class="pitch">
+<h2>Next step: the mock-up is one job in the edit</h2>
+<p>This guide is the free version — one prompt and a checklist. Turning the mock-up habit into a finished, watchable edit every time — cutting, captioning, sound design, and rendering, all inside Claude — is a separate skill.</p>
+<p>That is what the <b>Complete Editor Pack</b> teaches: <b>&ldquo;How to Turn Your Claude Into a Professional Editor&rdquo;</b> — the full skill, a setup guide, a walkthrough video, 15 sound effects, 3 ready workflows, and free updates. $39, one-time payment, on Gumroad: <b><a href="https://saadai.gumroad.com/l/complete-editor-pack">saadai.gumroad.com/l/complete-editor-pack</a></b></p>
+<p>Just want the skill on its own? The starter version is $20, one-time: <a href="https://saadai.gumroad.com/l/claude-video-editor">saadai.gumroad.com/l/claude-video-editor</a></p>
+<p>If this guide showed you how to edit before you film, the pack is the next step: it shows you how to finish the whole edit.</p>
+</div>
+
+<p class="foot">Saad AI · Free guide · Keyword: MOCKUP · The 90% figure is Riley Brown&rsquo;s claim about his own workflow. The Jobs line is from his 1996 interview.</p>
+</div>
+<div class="sticky-cta">Free guide — no email needed · <a href="#guide">Read it here ↓</a></div>
+</body>
+</html>
