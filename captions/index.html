@@ -3,10 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CAPTIONS: Your Captions Are Why They Scroll — Free Guide | Saad AI</title>
+<title>Word-by-Word Captions with Claude Code — Free Guide</title>
+<meta name="description" content="Word-by-word captions, timed to the frame they were spoken, with Claude Code. The 5-rule checklist, the two mistakes, and the exact prompt — free guide.">
+<link rel="canonical" href="https://saadamir952-prog.github.io/saad-ai-guides/captions/">
+<meta property="og:title" content="Word-by-Word Captions with Claude Code — Free Guide">
+<meta property="og:description" content="Word-by-word captions, timed to the frame they were spoken, with Claude Code. The 5-rule checklist, the two mistakes, and the exact prompt — free guide.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://saadamir952-prog.github.io/saad-ai-guides/captions/">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0;}
-body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; background: #FAF6EF; color: #1A1A1A; line-height: 1.6; padding: 32px 20px 88px;}
+body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; background: #FAF6EF; color: #1A1A1A; line-height: 1.6; padding: 32px 20px 32px;}
 .wrap { max-width: 680px; margin: 0 auto;}
 .kicker { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: #C2571B; font-weight: 700; margin-bottom: 8px;}
 h1 { font-size: 40px; line-height: 1.08; font-weight: 900; letter-spacing: -0.5px; margin-bottom: 12px;}
@@ -28,20 +34,14 @@ pre { background: #1A1A1A; color: #F2EDE3; padding: 16px; border-radius: 10px; o
 .guide { background: #fff; border: 1px solid #E8DFD2; border-radius: 12px; padding: 20px; margin: 16px 0;}
 .step { display: flex; gap: 14px; margin-bottom: 14px;}
 .step .n { flex: 0 0 30px; height: 30px; border-radius: 50%; background: #C2571B; color: #fff; font-weight: 800; text-align: center; line-height: 30px;}
-.pitch { background: #1A1A1A; color: #F2EDE3; border-radius: 12px; padding: 22px; margin: 28px 0;}
-.pitch h2 { border: none; padding: 0; margin: 0 0 10px; color: #fff;}
-.pitch p { color: #D8D2C4;}
-.pitch a { color: #F0A35E; font-weight: 700;}
 a { color: #C2571B;}
-.sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; background: #1A1A1A; color: #F2EDE3; padding: 14px 20px; text-align: center; font-size: 15px; z-index: 100;}
-.sticky-cta a { color: #F0A35E; font-weight: 700;}
 .foot { font-size: 13px; color: #999; margin-top: 32px;}
 </style>
 </head>
 <body>
 <div class="wrap">
 <div class="kicker">Saad AI &middot; Free guide &middot; Keyword: CAPTIONS</div>
-<h1>Your captions are <span class="accent">why they scroll.</span></h1>
+<h1>Word-by-word captions <span class="accent">that keep them watching.</span></h1>
 <p class="sub">Captions are not subtitles. Subtitles transcribe; captions sell the watch. One word at a time, each word on the frame it was spoken, one keyword to land on — that is the whole method, and the proof is a real caption run on this video&rsquo;s own voiceover.</p>
 
 <div class="proof">
@@ -66,13 +66,6 @@ a { color: #C2571B;}
 <p><a href="#guide">Read the full guide ↓</a></p>
 </div>
 
-<div class="pitch">
-<h2>Next step: captions are one job in the edit</h2>
-<p>This guide is the free version — one checklist, one prompt, and the proof from our own run. Turning that into a finished, watchable edit every time — cutting, captioning, sound design, and rendering, all inside Claude — is a separate skill.</p>
-<p>That is what the <b>Complete Editor Pack</b> teaches: <b>&ldquo;How to Turn Your Claude Into a Professional Editor&rdquo;</b> — the full skill, a setup guide, a walkthrough video, 15 sound effects, 3 ready workflows, and free updates. $39, one-time payment, on Gumroad: <b><a href="https://saadai.gumroad.com/l/complete-editor-pack">saadai.gumroad.com/l/complete-editor-pack</a></b></p>
-<p>Just want the skill on its own? The starter version is $20, one-time: <a href="https://saadai.gumroad.com/l/claude-video-editor">saadai.gumroad.com/l/claude-video-editor</a></p>
-<p>If this guide showed you how to time captions so people keep watching, the pack is the next step: it shows you how to finish the whole edit.</p>
-</div>
 
 <div class="warn">
 <b>The cost — read this first.</b> This technique uses <b>Claude Code to caption from the transcript</b>, and Claude Code needs <b>a paid Claude plan</b>. That is the one paid part. The captioning tools themselves are free: <b>local Whisper</b> for word timings and <b>ffmpeg</b> for the export.
@@ -91,8 +84,9 @@ a { color: #C2571B;}
 <p><b>What you need.</b> Claude Code (a paid Claude plan), a video with a voiceover, local Whisper (free, for the word timings), ffmpeg (free, for the export). No other tool. No caption app.</p>
 <p><b>Honest limits.</b> Claude Code is paid — the captioning tools are free, the seat is not. Captions can&rsquo;t save a boring video — they sell a good one. Check the export before you post — watch the finished video once, end to end. The numbers above are from one run on our machine; your voiceover will have a different word count, and the shape of the result is the same.</p>
 
+<p>Want the full kit? The Complete Editor Pack ($39, one-time) adds the skill, 15 SFX, 3 workflows and updates: <a href="https://saadai.gumroad.com/l/complete-editor-pack">Complete Editor Pack on Gumroad</a></p>
+
 <p class="foot">Saad AI — free guide. Measured on our own voiceover, 22 Nov 2026, with faster-whisper + generate_captions.py. Guide again at https://saadamir952-prog.github.io/saad-ai-guides/captions/</p>
 </div>
-<div class="sticky-cta">Want the full skill? One command does all of this — <a href="https://saadai.gumroad.com/l/complete-editor-pack">Complete Editor Pack, $39 →</a></div>
 </body>
 </html>
