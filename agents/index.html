@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AGENTS: Seventy-Two Agents. One Install. — Free Guide | Saad AI</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0;}
+body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; background: #FAF6EF; color: #1A1A1A; line-height: 1.6; padding: 32px 20px 88px;}
+.wrap { max-width: 680px; margin: 0 auto;}
+.kicker { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: #E07856; font-weight: 700; margin-bottom: 8px;}
+h1 { font-size: 40px; line-height: 1.08; font-weight: 900; letter-spacing: -0.5px; margin-bottom: 12px;}
+h1 .accent { color: #E07856;}
+.sub { font-size: 18px; color: #555; margin-bottom: 28px;}
+h2 { font-size: 22px; margin: 32px 0 12px; padding-top: 20px; border-top: 2px solid #E8DFD2;}
+h3 { font-size: 17px; margin: 20px 0 6px;}
+p, li { font-size: 16px; color: #333;}
+p { margin-bottom: 12px;}
+ul, ol { margin: 0 0 12px 22px;}
+li { margin-bottom: 6px;}
+code { background: #EFE7D8; padding: 2px 6px; border-radius: 4px; font-size: 14px;}
+pre { background: #1A1A1A; color: #F2EDE3; padding: 16px; border-radius: 10px; overflow-x: auto; font-size: 14px; line-height: 1.45; margin: 10px 0 16px; white-space: pre-wrap; word-break: break-all;}
+.proof { background: #fff; border: 1px solid #E8DFD2; border-radius: 12px; padding: 20px; margin: 16px 0;}
+.proof b { color: #E07856;}
+.proof .big { font-size: 28px; font-weight: 900; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 8px;}
+.proof .big .accent { color: #E07856;}
+.warn { background: #FFF4E5; border-left: 4px solid #E8A33D; padding: 14px 16px; border-radius: 0 8px 8px 0; margin: 16px 0;}
+.guide { background: #fff; border: 1px solid #E8DFD2; border-radius: 12px; padding: 20px; margin: 16px 0;}
+.step { display: flex; gap: 14px; margin-bottom: 14px;}
+.step .n { flex: 0 0 30px; height: 30px; border-radius: 50%; background: #E07856; color: #fff; font-weight: 800; text-align: center; line-height: 30px;}
+.pitch { background: #1A1A1A; color: #F2EDE3; border-radius: 12px; padding: 22px; margin: 28px 0;}
+.pitch h2 { border: none; padding: 0; margin: 0 0 10px; color: #fff;}
+.pitch p { color: #D8D2C4;}
+.pitch a { color: #FFB59E; font-weight: 700;}
+a { color: #E07856;}
+.sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; background: #1A1A1A; color: #F2EDE3; padding: 14px 20px; text-align: center; font-size: 15px; z-index: 100;}
+.sticky-cta a { color: #FFB59E; font-weight: 700;}
+.foot { font-size: 13px; color: #999; margin-top: 32px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="kicker">Saad AI &middot; Free guide &middot; Keyword: AGENTS</div>
+<h1>Seventy-two agents. <span class="accent">One install.</span></h1>
+<p class="sub">One Claude does everything &mdash; plans, writes, reviews, fixes &mdash; and hopes the output is decent. This setup splits the work: one agent per job, all installed as one plugin.</p>
+
+<div class="proof">
+<p class="big">72 agents. 328 skills. <span class="accent">99 commands.</span></p>
+<p><b>Everything Claude Code (ECC)</b> is a free, open-source plugin for Claude Code: 72 specialized agents, 328 skills, and 99 slash commands, installed as one plugin. <b>We counted every number ourselves</b> in a direct clone of the official repo on 24 Nov 2026 &mdash; 72 agent files, 328 skill folders, 99 command files. The repo passed 300,000 stars (309,027 on 23 Nov 2026).</p>
+<p><b>The idea:</b> instead of one generalist doing everything, each agent has one job &mdash; one plans the feature, one designs the architecture, one reads every line for security holes, one only fixes build errors. And it learns the way you code: one command reads your git history and writes your habits into skills it reuses.</p>
+<p><i>The setup in the video comes from @vektor.fm&rsquo;s reel (23 Nov 2026). Every number in this guide was verified by us in the repo itself &mdash; nothing here is copied on trust.</i></p>
+</div>
+
+<h2>What this guide covers</h2>
+<ul>
+<li><b>The install</b> &mdash; two paths, pick one: the 2 plugin commands, or the guided setup.</li>
+<li><b>The first agents</b> &mdash; which 6 to switch on first, and the command that calls each one.</li>
+<li><b>The learning trick</b> &mdash; <code>/skill-create</code> reads your git history and writes the way you code into skills it reuses.</li>
+<li><b>The official repo link</b> &mdash; and why unofficial copies are dangerous.</li>
+<li><b>The cost, stated first</b> &mdash; ECC is free and open-source. Claude Code needs a paid plan.</li>
+</ul>
+
+<div class="guide">
+<h2>Get your free guide</h2>
+<p>The full guide is on this page — <b>free, no email needed, no sign-up, no download.</b> Scroll down and read it here.</p>
+<p><a href="#guide">Read the full guide ↓</a></p>
+</div>
+
+<div id="guide">
+<div class="warn">
+<b>The cost — read this first.</b> ECC itself is <b>free and open-source (MIT)</b> — the plugin, the 72 agents, the 328 skills, all of it. <b>Claude Code needs a paid Claude plan</b> — that is the one paid part, and you already need it to run the plugin. <b>Do not confuse this with paid extras:</b> the ECC GitHub App offers paid tiers for private repos (from $19/seat/month) — you do not need it for the install in this guide. And never pay anyone for ECC itself: if someone is selling you this plugin, it is not the official project.
+</div>
+
+<h2>The 2 install commands (copy-paste)</h2>
+<p><b>Path A — inside Claude Code (no terminal needed).</b> Open Claude Code and run these two commands, one after the other:</p>
+<pre>/plugin marketplace add https://github.com/affaan-m/ECC
+/plugin install ecc@ecc</pre>
+<p>That installs the whole plugin: all 72 agents, 328 skills, and 99 commands. Verify it worked:</p>
+<pre>/plugin list</pre>
+<p>You should see <code>ecc@ecc</code> enabled.</p>
+<p><b>Path B — the guided setup (the README&rsquo;s recommended path).</b> If you prefer a wizard that handles updates, scope, and hook settings, run this in your terminal instead. Prerequisites: Node.js 18 or newer, Git, and Claude Code 2.1 or newer.</p>
+<pre>npx ecc-universal@2.2.3 setup</pre>
+<p>For a typical personal setup, choose <b>Global user</b>, choose <b>Standard</b> hooks, and confirm. Then start a new Claude Code session and run <code>/plugin list</code> to verify <code>ecc@ecc</code> is enabled.</p>
+<p><b>Pick ONE path.</b> Both install the same <code>ecc@ecc</code> plugin. Do not stack them &mdash; installing ECC twice into the same setup can duplicate skills, commands, and hooks.</p>
+
+<h2>Which agents to switch on first</h2>
+<p>The README&rsquo;s own advice: <b>start with the workflow you need, not the full catalog.</b> Seventy-two agents is a team, not a to-do list. These six cover the work most people do first:</p>
+<div class="step"><div class="n">1</div><div><b>planner &mdash; plan the feature first.</b> <code>/ecc:plan &quot;describe the feature&quot;</code> &mdash; planner writes the implementation blueprint before any code exists. Always first.</div></div>
+<div class="step"><div class="n">2</div><div><b>tdd-guide &mdash; write code tests-first.</b> The <code>tdd-workflow</code> skill &mdash; write the failing test, then the code that passes it. Same skill for fixing bugs: reproduce it with a failing test first.</div></div>
+<div class="step"><div class="n">3</div><div><b>code-reviewer &mdash; review what you just wrote.</b> <code>/code-review</code> &mdash; a fresh-context review of new code, before it ships.</div></div>
+<div class="step"><div class="n">4</div><div><b>build-error-resolver &mdash; fix the failing build.</b> <code>/build-fix</code> &mdash; one agent whose only job is build errors.</div></div>
+<div class="step"><div class="n">5</div><div><b>security-reviewer &mdash; check for holes.</b> <code>/security-scan</code> &mdash; reads every line for vulnerabilities before production.</div></div>
+<div class="step"><div class="n">6</div><div><b>e2e-runner &mdash; test the real user flow.</b> The <code>e2e-testing</code> skill &mdash; end-to-end tests on the critical path, not just unit tests.</div></div>
+<p>Two more worth knowing on day one: <b>architect</b> (design the system architecture, alongside <code>/ecc:plan</code>) and <b>go-reviewer</b> (<code>/go-review</code>, if you write Go). The other 64 agents are specialists by language and domain &mdash; call them when the work calls for them.</p>
+
+<h2>It learns the way you code</h2>
+<p>One command reads your git history and writes the way you code into skills the agents reuse:</p>
+<pre>/skill-create</pre>
+<p>Run it after the install, once you have some history in the repo. It turns your own patterns &mdash; how you structure code, how you test, how you name things &mdash; into skills ECC applies next time. That is the part most people skip, and the part that makes the agents feel like yours instead of generic.</p>
+
+<h2>The official repo</h2>
+<p>Install only from the official project:</p>
+<p><b><a href="https://github.com/affaan-m/ECC">github.com/affaan-m/ECC</a></b></p>
+<p>The official channels are the GitHub repo, the npm packages <code>ecc-universal</code> and <code>ecc-agentshield</code>, the GitHub App, the plugin slug <code>ecc@ecc</code>, and <a href="https://ecc.tools">ecc.tools</a>. The project&rsquo;s own warning, from its README: <i>third-party re-uploads and unofficial mirrors are not maintained or reviewed by the project and may contain malware.</i> If the install source is not one of the official channels above, do not run it.</p>
+
+<h2>The catch</h2>
+<p>Seventy-two agents is a lot &mdash; and that is the trap. If you try to use all of them on day one, you will spend the day configuring instead of building. Start with the six above, one workflow at a time. The agents are only as good as the plan: skip the planner and the rest of the team builds the wrong thing faster. And remember the install rule: one path, once &mdash; never stack two installs into the same setup.</p>
+
+<h2>What it costs, in full</h2>
+<ul>
+<li>ECC plugin — 72 agents, 328 skills, 99 commands (MIT, open-source): $0</li>
+<li>Guided setup (<code>npx ecc-universal</code>): $0</li>
+<li>Claude Code: needs a paid Claude plan (the one paid part)</li>
+<li>ECC GitHub App, paid tiers for private repos (from $19/seat/month): optional — NOT needed for this install</li>
+<li>Anyone selling you ECC itself: not the official project — do not pay</li>
+</ul>
+</div>
+
+<div class="pitch">
+<h2>Next step: a team of agents is one job in the edit</h2>
+<p>This guide is the free version — the install commands and the first agents to switch on. Turning Claude into a finished, watchable edit every time — cutting, captioning, sound design, and rendering, all inside Claude — is a separate skill.</p>
+<p>That is what the <b>Complete Editor Pack</b> teaches: <b>&ldquo;How to Turn Your Claude Into a Professional Editor&rdquo;</b> — the full skill, a setup guide, a walkthrough video, 15 sound effects, 3 ready workflows, and free updates. $39, one-time payment, on Gumroad: <b><a href="https://saadai.gumroad.com/l/complete-editor-pack">saadai.gumroad.com/l/complete-editor-pack</a></b></p>
+<p>Just want the skill on its own? The starter version is $20, one-time: <a href="https://saadai.gumroad.com/l/claude-video-editor">saadai.gumroad.com/l/claude-video-editor</a></p>
+<p>If this guide showed you how to turn one Claude into a team of specialists, the pack is the next step: it shows you how to finish the whole edit.</p>
+</div>
+
+<p class="foot">Saad AI · Free guide · Keyword: AGENTS · Counts verified 24 Nov 2026 in a direct clone of github.com/affaan-m/ECC (72 agent files, 328 skill folders, 99 command files). Stars: 309,027 on 23 Nov 2026. Setup via @vektor.fm&rsquo;s reel (23 Nov 2026).</p>
+</div>
+<div class="sticky-cta">Free guide — no email needed · <a href="#guide">Read it here ↓</a></div>
+</body>
+</html>
