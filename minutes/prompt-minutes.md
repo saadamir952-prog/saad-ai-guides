@@ -59,14 +59,4 @@ line, e.g.:
 
 Then re-export. The loop is fast because the run is seconds.
 
-## The full pipeline
-
-This prompt is the free DIY version. If you want the whole pipeline
-packaged — transcribe, cut the silences, pick the best takes,
-animated captions, SFX, and a mastered export — the Complete Editor
-Pack does it in one command: the skill, a setup guide, a walkthrough
-video, 15 sound effects, 3 ready workflows, and free updates. $39,
-one-time payment: https://saadai.gumroad.com/l/complete-editor-pack
-
-Just want the skill on its own? The starter version is $20,
-one-time: https://saadai.gumroad.com/l/claude-video-editor
+Want the full kit? The Complete Editor Pack ($39, one-time) adds the skill, 15 SFX, 3 workflows and updates: https://saadai.gumroad.com/l/complete-editor-pack
