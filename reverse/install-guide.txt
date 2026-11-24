@@ -227,26 +227,7 @@ Use this after your first breakdown. Work in this order:
    subtitle positions, where the music comes in and drops. Fix the
    worst-matching shots first.
 
-NEXT STEP: TURN THE PLAN INTO A FINISHED EDIT
----------------------------------------------
-rea-video gives you the plan. Turning that plan into a finished,
-watchable edit is a separate skill — cutting, captioning, sound design,
-and rendering, all inside Claude.
-
-That is what the Complete Editor Pack teaches: "How to Turn Your Claude
-Into a Professional Editor" — the full skill, a setup guide, a
-walkthrough video, 15 sound effects, 3 ready workflows, and free
-updates. $39, one-time payment, on Gumroad:
-
-https://saadai.gumroad.com/l/complete-editor-pack
-
-Just want the skill on its own? The starter version is $20, one-time:
-https://saadai.gumroad.com/l/claude-video-editor
-
-If the REVERSE guide showed you how a video you admire was built, the
-pack is the next step: it shows you how to build yours — one prompt at
-a time, in Claude Code. Get the guide above for free; get the pack when
-you are ready to edit.
+Want the full kit? The Complete Editor Pack ($39, one-time) adds the skill, 15 SFX, 3 workflows and updates: https://saadai.gumroad.com/l/complete-editor-pack
 
 ---
 Saad AI — free guide. rea-video is by JuneYaooo, Apache-2.0. Star counts
