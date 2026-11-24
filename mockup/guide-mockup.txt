@@ -87,19 +87,4 @@ the mock-up. On camera, they cost you five takes.
 
 ---
 
-**Next step:** this guide is the free version — one prompt and a
-checklist. Turning the mock-up habit into a finished, watchable edit
-every time — cutting, captioning, sound design, and rendering, all
-inside Claude — is a separate skill.
-
-That is what the **Complete Editor Pack** teaches: "How to Turn Your
-Claude Into a Professional Editor" — the full skill, a setup guide, a
-walkthrough video, 15 sound effects, 3 ready workflows, and free
-updates. $39, one-time payment, on Gumroad:
-https://saadai.gumroad.com/l/complete-editor-pack
-
-Just want the skill on its own? The starter version is $20, one-time:
-https://saadai.gumroad.com/l/claude-video-editor
-
-If this guide showed you how to edit before you film, the pack is the
-next step: it shows you how to finish the whole edit.
+Want the full kit? The Complete Editor Pack ($39, one-time) adds the skill, 15 SFX, 3 workflows and updates: https://saadai.gumroad.com/l/complete-editor-pack
