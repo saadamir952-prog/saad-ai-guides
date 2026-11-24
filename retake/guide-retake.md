@@ -94,15 +94,7 @@ No other tool. No editing app. The filming rule does the work before the edit st
 - **Check the export before you post.** Watch the finished take once, end to end. If a cut lands mid-word, tell Claude which sentence and it re-cuts.
 - **The numbers above are from one take on our machine.** Your messy take will have different numbers. The shape of the result — raw take in, clean last attempt out — is the same.
 
-## Next step: turn messy takes into finished edits
-
-This guide is the free version — one rule, one prompt, and the proof from our own take. Turning that into a finished, watchable edit every time — cutting, captioning, sound design, and rendering, all inside Claude — is a separate skill.
-
-That is what the **Complete Editor Pack** teaches: **"How to Turn Your Claude Into a Professional Editor"** — the full skill, a setup guide, a walkthrough video, 15 sound effects, 3 ready workflows, and free updates. $39, one-time payment, on Gumroad: https://saadai.gumroad.com/l/complete-editor-pack
-
-Just want the skill on its own? The starter version is $20, one-time: https://saadai.gumroad.com/l/claude-video-editor
-
-If the RETAKE guide showed you how to film so the edit is easy, the pack is the next step: it shows you how to finish the edit — one prompt at a time, in Claude Code. Get the guide above for free; get the pack when you are ready to edit.
+Want the full kit? The Complete Editor Pack ($39, one-time) adds the skill, 15 SFX, 3 workflows and updates: https://saadai.gumroad.com/l/complete-editor-pack
 
 ---
 
