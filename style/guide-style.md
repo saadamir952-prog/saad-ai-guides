@@ -1,0 +1,111 @@
+# Teach Claude Your Style — One Prompt Edits Like You
+
+**Free guide · Keyword: STYLE · Saad AI**
+
+## The cost — read this first
+
+This method runs inside **Claude Code, which needs a paid Claude plan** —
+that is the one paid part. Everything else is yours already: your own
+best reels (the ones you already posted) and one raw clip. No new tool
+to buy, no plugin to install.
+
+## The idea in one sentence
+
+Stop describing your editing style in a prompt — your style is not in a
+prompt, it is in your old videos: your captions, your cuts, your pace.
+Show Claude three of your best reels, let it write your style sheet in
+plain words, and the next edit comes out like you.
+
+## The proof
+
+In the video: the same raw clip, two edits. The generic Claude cut —
+flat, plain, the same as every other AI edit. And the cut in my style —
+same footage, different video. The difference is the style sheet.
+
+My own sheet, measured from my last three reels (@saad.aig):
+
+- **Voiceover pace: 3.0–3.7 words per second** (measured: 3.03, 3.06, 3.72)
+- **Captions word-by-word, 2–4 words per phrase**
+- **Frame 1 = one huge thing** — the result on screen in the first second
+- **Handoffs are morphs** — every cut carries a shared element across
+
+That sheet is real: every line traces to a measurement from my own
+videos. Yours will read differently — that is the point. Claude writes
+it from YOUR reels, not from a template.
+
+## The exact prompt (copy-paste)
+
+Put three of your best reels and one raw clip in one folder, open
+Claude Code there, and paste this:
+
+```
+Study these three reels — captions, cuts, pacing, hooks — write my
+style sheet, then edit this clip to match it.
+```
+
+Then read what it writes back. The style sheet is the deliverable: a
+short list of your rules, in plain words. If a line is wrong, correct
+it — the sheet is yours to edit, and every correction makes the next
+edit closer.
+
+## The style-sheet template
+
+This is the shape Claude writes back. Use it to check the sheet, or
+fill it in yourself first and let Claude refine it:
+
+```
+MY STYLE SHEET — [your handle]
+
+1. VOICEOVER PACE: [words per second, measured from my reels]
+2. CAPTIONS: [word-by-word / per sentence · words per phrase]
+3. FRAME 1: [what fills the first frame — the result, the number]
+4. CUTS: [morphs / hard cuts / what carries across]
+5. PACE: [something new every ~X seconds]
+6. PROOF: [the result is shown before it is explained]
+7. CTA: [keyword at ~X% of the video]
+8. SOUND: [music / no music · sound on every text appearance]
+9. PRESENTER: [face or avatar, where, how big]
+10. ACCENT: [one accent colour per video]
+```
+
+My filled example (measured from @saad.aig's last three reels):
+
+1. Voiceover pace: 3.0–3.7 words/sec
+2. Captions: word-by-word, 2–4 words per phrase
+3. Frame 1: one huge thing (the finished result, first second)
+4. Cuts: morphs — 5/5 and 6/6 handoffs carry a shared element
+5. Pace: something new roughly every second
+6. Proof: the result on screen before the explanation
+7. CTA: keyword at ~85% of the video
+8. Sound: no music; a sound on every text appearance
+9. Presenter: small avatar, hook and lead only
+10. Accent: one accent colour per video
+
+## The 3-step checklist
+
+1. **One folder.** Three of your best reels — your best, not your
+   latest — plus the raw clip you want edited.
+2. **One prompt.** Paste the prompt above. Read the style sheet it
+   writes back. Correct any line that is not you.
+3. **Next time, one line.** No setup. "Edit this like my reels."
+   It already knows how — the sheet is saved in the folder.
+
+## The catch
+
+The sheet is only as good as the reels you feed it. Generic reels in,
+generic sheet out — Claude studies what you show it, and it cannot
+invent a style you do not have. Feed it your three most YOU videos,
+the ones people save and share, not the ones that merely did numbers.
+And read the sheet before you trust the edit: if Claude writes a rule
+you never follow, strike it. The sheet is a draft of your taste, and
+you are still the editor.
+
+## What it costs, in full
+
+- Your three best reels + one raw clip: $0 (already yours)
+- The style sheet: written by Claude from your reels: $0 extra
+- Claude Code: needs a paid Claude plan (the one paid part)
+
+---
+
+Want the full kit? The Complete Editor Pack ($39, one-time) adds the skill, 15 SFX, 3 workflows and updates: https://saadai.gumroad.com/l/complete-editor-pack
