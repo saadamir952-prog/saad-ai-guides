@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude Can Hear Its Own Edit — The Earshot Setup — Free Guide</title>
+<meta name="description" content="Give Claude ears: describe any sound in words, score it against the sound you want, and grade your whole video audio with fixes worst first. The exact setup and the 3 commands.">
+<style>
+body { font-family: Helvetica, Arial, sans-serif; background: #F4F6F8; color: #111; line-height: 1.6; padding: 32px 20px; }
+.wrap { max-width: 680px; margin: 0 auto; }
+.kicker { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: #2F7BFF; font-weight: 700; }
+h1 { font-size: 38px; line-height: 1.1; }
+h2 { font-size: 22px; margin-top: 30px; }
+pre { background: #14181F; color: #E8EEF7; padding: 16px; border-radius: 10px; overflow-x: auto; font-size: 14px; white-space: pre-wrap; }
+.card { background: #fff; border: 2px solid #2F7BFF; border-radius: 12px; padding: 18px; margin: 16px 0; }
+.warn { background: #FFF4E0; border-left: 4px solid #F5A623; padding: 12px 16px; margin: 16px 0; }
+.foot { font-size: 13px; color: #888; margin-top: 30px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="kicker">Saad AI · Free guide · Keyword: LISTEN</div>
+<h1>Claude can edit your video. It cannot hear it.</h1>
+<p>Five checks fix that. Earshot gives Claude ears: it describes a sound in words, scores it against the sound you asked for, finds the best moment in a recording, flags real vs code-made sound, and grades your whole video's audio with fixes listed worst first.</p>
+<div class="card">
+<p><b>The proof, run for real on our own sound:</b> describe → Ringtone 0.83 · match "a classic telephone ringing" → <b>strong, z +3.8</b> · critique on our last video → <b>needs work, 19/23 in range</b>.</p>
+</div>
+<h2>The cost — read this first</h2>
+<div class="warn"><p>Earshot is <b>free and open-source (MIT)</b> and runs on your CPU. The one paid part is <b>Claude Code, which needs a paid Claude plan</b>. You need Python 3.10+ and ffmpeg. The listening models (about 1.1 GB) download once; after that it works offline.</p></div>
+<h2>Setup (copy-paste)</h2>
+<pre>pip install torch --index-url https://download.pytorch.org/whl/cpu
+pip install "earshot[listen,mcp] @ git+https://github.com/Leonxlnx/earshot"
+earshot doctor --fetch
+claude mcp add earshot --scope user -e EARSHOT_THREADS=3 -- earshot mcp</pre>
+<h2>The 3 commands</h2>
+<p><b>1. Describe</b> — what a sound actually sounds like, not your file name:</p>
+<pre>earshot describe sound.wav</pre>
+<p><b>2. Match</b> — write the sound you want; it scores strong, plausible, weak, or no match:</p>
+<pre>earshot match sound.wav "a classic telephone ringing"</pre>
+<p><b>3. Critique</b> — grade the whole video's sound, fixes worst first:</p>
+<pre>earshot critique video.mp4</pre>
+<h2>The honest limits</h2>
+<p>It cannot judge taste, emotion, or speech content, and busy mixes blur its tags. Very short sounds read weakly. It compares against launch-film references, so a fix that fights your format is yours to overrule. Listen once yourself before you post.</p>
+<p>This guide is free. If you want the full editor system behind these videos, the Complete Editor Pack ($39, one-time) is linked in my bio.</p>
+<p class="foot">Saad AI (@saad.aig) · Keyword: LISTEN</p>
+</div>
+</body>
+</html>
