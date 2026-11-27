@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One Raw Clip to a Finished Listing Reel — The Free Shot-Plan Setup</title>
+<meta name="description" content="Edit a raw talking clip into a finished listing-style reel with no timeline: blinks cut, numbers fill on the word, chart behind you, pool measured — from a shot plan timed to your voice.">
+<style>
+body { font-family: Helvetica, Arial, sans-serif; background: #E8F7EE; color: #10201C; line-height: 1.6; padding: 32px 20px; }
+.wrap { max-width: 680px; margin: 0 auto; }
+.kicker { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: #087F5B; font-weight: 700; }
+h1 { font-size: 38px; line-height: 1.1; }
+h2 { font-size: 22px; margin-top: 30px; }
+pre { background: #10201C; color: #E8F7EE; padding: 16px; border-radius: 10px; overflow-x: auto; font-size: 14px; white-space: pre-wrap; }
+.card { background: #fff; border: 2px solid #0CA678; border-radius: 12px; padding: 18px; margin: 16px 0; }
+.warn { background: #FFF4E0; border-left: 4px solid #FFB020; padding: 12px 16px; margin: 16px 0; }
+.foot { font-size: 13px; color: #888; margin-top: 30px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="kicker">Saad AI · Free guide · Keyword: LISTING</div>
+<h1>One raw clip. Nobody opened a timeline.</h1>
+<p>Everyone says AI edits look cheap. This is the free setup behind the test in the video: one messy take, finished by a shot plan timed to your voice — blinks and dead air cut first, every spoken number fills in on its word, a chart rises behind you, and the pool gets measured while you talk.</p>
+<div class="card">
+<p><b>The proof, from the video (our own demo take):</b> 4 bedrooms fills in on the word "Four" · the chart carries only the two spoken numbers, 4 and 12 · the 12 m line draws across the pool on the words "twelve-meter pool".</p>
+</div>
+<h2>The cost — read this first</h2>
+<div class="warn"><p>Claude Code needs a <b>paid Claude plan or API credits</b>. Everything else is free: ffmpeg, a local Whisper model for word timings, and Python with Pillow. Remotion is optional, only for animated panels.</p></div>
+<h2>The setup, step by step</h2>
+<p><b>1. Make the project folder.</b> One folder per video: raw clip, audio, graphics, export. The whole run stays repeatable.</p>
+<p><b>2. Transcribe the raw take.</b> Whisper gives word timings; mark retakes, blinks-and-restarts, and dead air. Check names and numbers first — timings are close, not perfect.</p>
+<p><b>3. Cut first, decorate later.</b> Cut retakes and pauses with ffmpeg from the transcript marks, short crossfades on the joins. The tightened take is the spine.</p>
+<p><b>4. Transcribe the tightened take to <code>words.json</code>.</b> One row per word: word, start, end. These timings — never hand-typed timestamps — drive every graphic.</p>
+<p><b>5. Write the shot plan.</b> One row per shot: <code>{layout, anchor_phrase, content}</code>. The anchor phrase is matched against <code>words.json</code>, so the shot starts when those words are said:</p>
+<pre>{layout: "finished-frame", anchor_phrase: "four bedrooms", content: "big 4 fills on the word Four"}
+{layout: "chart-behind", anchor_phrase: "a chart rises", content: "bars rise behind the speaker — only spoken numbers"}
+{layout: "measure", anchor_phrase: "twelve-meter pool", content: "measure line draws across the pool"}
+{layout: "shot-plan", anchor_phrase: "shot plan", content: "rows appear, matched to the voice"}</pre>
+<p>Only put numbers in the chart that the speaker actually says. No invented stats, no fake prices.</p>
+<p><b>6. Render from the plan, by code.</b> The render looks up each anchor phrase in <code>words.json</code> and places the graphic on that word. Change a row, re-render, done — nobody opened a timeline.</p>
+<p><b>7. Captions last, on the final audio.</b> Text from your script, timing from Whisper on the finished audio. Highlight the current word; keep chunks readable.</p>
+<p><b>8. Check before you post.</b> Watch once with sound, once muted: no silent gaps, every number on its word, chart numbers all spoken, measure graphic on the pool line.</p>
+<h2>The honest catch</h2>
+<p>This will not save a boring take. The cuts and graphics are timed to your words — your words still have to land.</p>
+<p>This guide is free. If you want the full editor system behind these videos, the Complete Editor Pack ($39, one-time) is linked in my bio.</p>
+<p class="foot">Saad AI (@saad.aig) · Keyword: LISTING</p>
+</div>
+</body>
+</html>
